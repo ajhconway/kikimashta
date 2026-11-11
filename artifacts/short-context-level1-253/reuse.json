@@ -1,0 +1,1180 @@
+{
+  "words": 37,
+  "prompts": 74,
+  "answerSlots": 296,
+  "sharedCards": 69,
+  "existingImages": 56,
+  "plannedImages": 13,
+  "maxSentenceCharacters": 13,
+  "maxQuestionCharacters": 10,
+  "cardsUsedAcrossWords": 55,
+  "cardsUsedAsCorrectAndDistractor": 38,
+  "inventory": [
+    {
+      "id": "apples-1",
+      "appearances": 5,
+      "correct": 2,
+      "distractor": 3,
+      "targetItemIds": [
+        "ja-v-277587e6fa07",
+        "ja-v-fae75d2d18b2",
+        "ja-v-8b887bc8af0c",
+        "ja-v-bb85f028d944"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hitotsu-01",
+        "ja-short-wk1-kudasai-01",
+        "ja-short-wk1-kudasai-02",
+        "ja-short-wk1-mittsu-01",
+        "ja-short-wk1-futatsu-02"
+      ]
+    },
+    {
+      "id": "apples-2",
+      "appearances": 5,
+      "correct": 2,
+      "distractor": 3,
+      "targetItemIds": [
+        "ja-v-277587e6fa07",
+        "ja-v-fae75d2d18b2",
+        "ja-v-8b887bc8af0c",
+        "ja-v-bb85f028d944"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hitotsu-01",
+        "ja-short-wk1-kudasai-01",
+        "ja-short-wk1-kudasai-02",
+        "ja-short-wk1-mittsu-01",
+        "ja-short-wk1-futatsu-02"
+      ]
+    },
+    {
+      "id": "apples-3",
+      "appearances": 5,
+      "correct": 1,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-277587e6fa07",
+        "ja-v-fae75d2d18b2",
+        "ja-v-8b887bc8af0c",
+        "ja-v-bb85f028d944"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hitotsu-01",
+        "ja-short-wk1-kudasai-01",
+        "ja-short-wk1-kudasai-02",
+        "ja-short-wk1-mittsu-01",
+        "ja-short-wk1-futatsu-02"
+      ]
+    },
+    {
+      "id": "apples-4",
+      "appearances": 5,
+      "correct": 0,
+      "distractor": 5,
+      "targetItemIds": [
+        "ja-v-277587e6fa07",
+        "ja-v-fae75d2d18b2",
+        "ja-v-8b887bc8af0c",
+        "ja-v-bb85f028d944"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hitotsu-01",
+        "ja-short-wk1-kudasai-01",
+        "ja-short-wk1-kudasai-02",
+        "ja-short-wk1-mittsu-01",
+        "ja-short-wk1-futatsu-02"
+      ]
+    },
+    {
+      "id": "cookies-1",
+      "appearances": 3,
+      "correct": 1,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-277587e6fa07",
+        "ja-v-8b887bc8af0c",
+        "ja-v-bb85f028d944"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hitotsu-02",
+        "ja-short-wk1-mittsu-02",
+        "ja-short-wk1-futatsu-01"
+      ]
+    },
+    {
+      "id": "cookies-2",
+      "appearances": 3,
+      "correct": 1,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-277587e6fa07",
+        "ja-v-8b887bc8af0c",
+        "ja-v-bb85f028d944"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hitotsu-02",
+        "ja-short-wk1-mittsu-02",
+        "ja-short-wk1-futatsu-01"
+      ]
+    },
+    {
+      "id": "cookies-3",
+      "appearances": 3,
+      "correct": 1,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-277587e6fa07",
+        "ja-v-8b887bc8af0c",
+        "ja-v-bb85f028d944"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hitotsu-02",
+        "ja-short-wk1-mittsu-02",
+        "ja-short-wk1-futatsu-01"
+      ]
+    },
+    {
+      "id": "cookies-4",
+      "appearances": 3,
+      "correct": 0,
+      "distractor": 3,
+      "targetItemIds": [
+        "ja-v-277587e6fa07",
+        "ja-v-8b887bc8af0c",
+        "ja-v-bb85f028d944"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hitotsu-02",
+        "ja-short-wk1-mittsu-02",
+        "ja-short-wk1-futatsu-01"
+      ]
+    },
+    {
+      "id": "oranges-6",
+      "appearances": 3,
+      "correct": 0,
+      "distractor": 3,
+      "targetItemIds": [
+        "ja-v-6c9351ae67e6",
+        "ja-v-0d0163a40587",
+        "ja-v-f6bc974a7405"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yattsu-01",
+        "ja-short-wk1-kokonotsu-02",
+        "ja-short-wk1-nanatsu-01"
+      ]
+    },
+    {
+      "id": "oranges-7",
+      "appearances": 3,
+      "correct": 1,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-6c9351ae67e6",
+        "ja-v-0d0163a40587",
+        "ja-v-f6bc974a7405"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yattsu-01",
+        "ja-short-wk1-kokonotsu-02",
+        "ja-short-wk1-nanatsu-01"
+      ]
+    },
+    {
+      "id": "oranges-8",
+      "appearances": 3,
+      "correct": 1,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-6c9351ae67e6",
+        "ja-v-0d0163a40587",
+        "ja-v-f6bc974a7405"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yattsu-01",
+        "ja-short-wk1-kokonotsu-02",
+        "ja-short-wk1-nanatsu-01"
+      ]
+    },
+    {
+      "id": "oranges-9",
+      "appearances": 3,
+      "correct": 1,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-6c9351ae67e6",
+        "ja-v-0d0163a40587",
+        "ja-v-f6bc974a7405"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yattsu-01",
+        "ja-short-wk1-kokonotsu-02",
+        "ja-short-wk1-nanatsu-01"
+      ]
+    },
+    {
+      "id": "eggs-6",
+      "appearances": 3,
+      "correct": 0,
+      "distractor": 3,
+      "targetItemIds": [
+        "ja-v-6c9351ae67e6",
+        "ja-v-0d0163a40587",
+        "ja-v-f6bc974a7405"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yattsu-02",
+        "ja-short-wk1-kokonotsu-01",
+        "ja-short-wk1-nanatsu-02"
+      ]
+    },
+    {
+      "id": "eggs-7",
+      "appearances": 3,
+      "correct": 1,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-6c9351ae67e6",
+        "ja-v-0d0163a40587",
+        "ja-v-f6bc974a7405"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yattsu-02",
+        "ja-short-wk1-kokonotsu-01",
+        "ja-short-wk1-nanatsu-02"
+      ]
+    },
+    {
+      "id": "eggs-8",
+      "appearances": 3,
+      "correct": 1,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-6c9351ae67e6",
+        "ja-v-0d0163a40587",
+        "ja-v-f6bc974a7405"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yattsu-02",
+        "ja-short-wk1-kokonotsu-01",
+        "ja-short-wk1-nanatsu-02"
+      ]
+    },
+    {
+      "id": "eggs-9",
+      "appearances": 3,
+      "correct": 1,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-6c9351ae67e6",
+        "ja-v-0d0163a40587",
+        "ja-v-f6bc974a7405"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yattsu-02",
+        "ja-short-wk1-kokonotsu-01",
+        "ja-short-wk1-nanatsu-02"
+      ]
+    },
+    {
+      "id": "box-above",
+      "appearances": 4,
+      "correct": 2,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-c0f58bfab324",
+        "ja-v-520308b3c3b4"
+      ],
+      "promptIds": [
+        "ja-short-wk1-ue-01",
+        "ja-short-wk1-ue-02",
+        "ja-short-wk1-shita-01",
+        "ja-short-wk1-shita-02"
+      ]
+    },
+    {
+      "id": "box-below",
+      "appearances": 4,
+      "correct": 2,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-c0f58bfab324",
+        "ja-v-520308b3c3b4"
+      ],
+      "promptIds": [
+        "ja-short-wk1-ue-01",
+        "ja-short-wk1-ue-02",
+        "ja-short-wk1-shita-01",
+        "ja-short-wk1-shita-02"
+      ]
+    },
+    {
+      "id": "box-left",
+      "appearances": 4,
+      "correct": 0,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-c0f58bfab324",
+        "ja-v-520308b3c3b4"
+      ],
+      "promptIds": [
+        "ja-short-wk1-ue-01",
+        "ja-short-wk1-ue-02",
+        "ja-short-wk1-shita-01",
+        "ja-short-wk1-shita-02"
+      ]
+    },
+    {
+      "id": "box-right",
+      "appearances": 4,
+      "correct": 0,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-c0f58bfab324",
+        "ja-v-520308b3c3b4"
+      ],
+      "promptIds": [
+        "ja-short-wk1-ue-01",
+        "ja-short-wk1-ue-02",
+        "ja-short-wk1-shita-01",
+        "ja-short-wk1-shita-02"
+      ]
+    },
+    {
+      "id": "house-mountain",
+      "appearances": 2,
+      "correct": 1,
+      "distractor": 1,
+      "targetItemIds": [
+        "ja-v-ddd9dca106e2",
+        "ja-v-46f8fe65f218"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yama-01",
+        "ja-short-wk1-kawa-02"
+      ]
+    },
+    {
+      "id": "house-river",
+      "appearances": 2,
+      "correct": 1,
+      "distractor": 1,
+      "targetItemIds": [
+        "ja-v-ddd9dca106e2",
+        "ja-v-46f8fe65f218"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yama-01",
+        "ja-short-wk1-kawa-02"
+      ]
+    },
+    {
+      "id": "house-sea",
+      "appearances": 2,
+      "correct": 0,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-ddd9dca106e2",
+        "ja-v-46f8fe65f218"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yama-01",
+        "ja-short-wk1-kawa-02"
+      ]
+    },
+    {
+      "id": "house-city",
+      "appearances": 2,
+      "correct": 0,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-ddd9dca106e2",
+        "ja-v-46f8fe65f218"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yama-01",
+        "ja-short-wk1-kawa-02"
+      ]
+    },
+    {
+      "id": "mountain",
+      "appearances": 2,
+      "correct": 1,
+      "distractor": 1,
+      "targetItemIds": [
+        "ja-v-ddd9dca106e2",
+        "ja-v-46f8fe65f218"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yama-02",
+        "ja-short-wk1-kawa-01"
+      ]
+    },
+    {
+      "id": "river",
+      "appearances": 4,
+      "correct": 1,
+      "distractor": 3,
+      "targetItemIds": [
+        "ja-v-ddd9dca106e2",
+        "ja-v-0181fab128a1",
+        "ja-v-46f8fe65f218"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yama-02",
+        "ja-short-wk1-fujisan-01",
+        "ja-short-wk1-fujisan-02",
+        "ja-short-wk1-kawa-01"
+      ]
+    },
+    {
+      "id": "park",
+      "appearances": 4,
+      "correct": 0,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-ddd9dca106e2",
+        "ja-v-0181fab128a1",
+        "ja-v-46f8fe65f218"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yama-02",
+        "ja-short-wk1-fujisan-01",
+        "ja-short-wk1-fujisan-02",
+        "ja-short-wk1-kawa-01"
+      ]
+    },
+    {
+      "id": "sea",
+      "appearances": 4,
+      "correct": 0,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-ddd9dca106e2",
+        "ja-v-0181fab128a1",
+        "ja-v-46f8fe65f218"
+      ],
+      "promptIds": [
+        "ja-short-wk1-yama-02",
+        "ja-short-wk1-fujisan-01",
+        "ja-short-wk1-fujisan-02",
+        "ja-short-wk1-kawa-01"
+      ]
+    },
+    {
+      "id": "adults",
+      "appearances": 10,
+      "correct": 5,
+      "distractor": 5,
+      "targetItemIds": [
+        "ja-v-2cc50c2d66a6",
+        "ja-v-7de8b40e4f57",
+        "ja-v-2ef4da30cf39",
+        "ja-v-2a318f5ee1c8",
+        "ja-v-4fa716f651b2"
+      ],
+      "promptIds": [
+        "ja-short-wk1-otona-01",
+        "ja-short-wk1-otona-02",
+        "ja-short-wk1-hitori-01",
+        "ja-short-wk1-hitori-02",
+        "ja-short-wk1-jinkou-population-01",
+        "ja-short-wk1-jinkou-population-02",
+        "ja-short-wk1-sannin-01",
+        "ja-short-wk1-sannin-02",
+        "ja-short-wk1-futari-01",
+        "ja-short-wk1-futari-02"
+      ]
+    },
+    {
+      "id": "children",
+      "appearances": 2,
+      "correct": 0,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-2cc50c2d66a6"
+      ],
+      "promptIds": [
+        "ja-short-wk1-otona-01",
+        "ja-short-wk1-otona-02"
+      ]
+    },
+    {
+      "id": "babies",
+      "appearances": 4,
+      "correct": 0,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-2cc50c2d66a6",
+        "ja-v-4d9423288cb2"
+      ],
+      "promptIds": [
+        "ja-short-wk1-otona-01",
+        "ja-short-wk1-otona-02",
+        "ja-short-wk1-onna-01",
+        "ja-short-wk1-onna-02"
+      ]
+    },
+    {
+      "id": "cats",
+      "appearances": 6,
+      "correct": 0,
+      "distractor": 6,
+      "targetItemIds": [
+        "ja-v-2cc50c2d66a6",
+        "ja-v-ad7167347a2a",
+        "ja-v-4d9423288cb2"
+      ],
+      "promptIds": [
+        "ja-short-wk1-otona-01",
+        "ja-short-wk1-otona-02",
+        "ja-short-wk1-hito-01",
+        "ja-short-wk1-hito-02",
+        "ja-short-wk1-onna-01",
+        "ja-short-wk1-onna-02"
+      ]
+    },
+    {
+      "id": "push-hard",
+      "appearances": 8,
+      "correct": 3,
+      "distractor": 5,
+      "targetItemIds": [
+        "ja-v-33c00f4a1a8b",
+        "ja-v-6d1d47c9258e",
+        "ja-v-06a4c07236b5",
+        "ja-v-c70f2920b2de"
+      ],
+      "promptIds": [
+        "ja-short-wk1-chikara-01",
+        "ja-short-wk1-chikara-02",
+        "ja-short-wk1-ageru-01",
+        "ja-short-wk1-ageru-02",
+        "ja-short-wk1-sageru-01",
+        "ja-short-wk1-sageru-02",
+        "ja-short-wk1-chikaraippai-01",
+        "ja-short-wk1-chikaraippai-02"
+      ]
+    },
+    {
+      "id": "push-gently",
+      "appearances": 4,
+      "correct": 1,
+      "distractor": 3,
+      "targetItemIds": [
+        "ja-v-33c00f4a1a8b",
+        "ja-v-c70f2920b2de"
+      ],
+      "promptIds": [
+        "ja-short-wk1-chikara-01",
+        "ja-short-wk1-chikara-02",
+        "ja-short-wk1-chikaraippai-01",
+        "ja-short-wk1-chikaraippai-02"
+      ]
+    },
+    {
+      "id": "pull",
+      "appearances": 8,
+      "correct": 0,
+      "distractor": 8,
+      "targetItemIds": [
+        "ja-v-33c00f4a1a8b",
+        "ja-v-6d1d47c9258e",
+        "ja-v-06a4c07236b5",
+        "ja-v-c70f2920b2de"
+      ],
+      "promptIds": [
+        "ja-short-wk1-chikara-01",
+        "ja-short-wk1-chikara-02",
+        "ja-short-wk1-ageru-01",
+        "ja-short-wk1-ageru-02",
+        "ja-short-wk1-sageru-01",
+        "ja-short-wk1-sageru-02",
+        "ja-short-wk1-chikaraippai-01",
+        "ja-short-wk1-chikaraippai-02"
+      ]
+    },
+    {
+      "id": "carry",
+      "appearances": 4,
+      "correct": 0,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-33c00f4a1a8b",
+        "ja-v-c70f2920b2de"
+      ],
+      "promptIds": [
+        "ja-short-wk1-chikara-01",
+        "ja-short-wk1-chikara-02",
+        "ja-short-wk1-chikaraippai-01",
+        "ja-short-wk1-chikaraippai-02"
+      ]
+    },
+    {
+      "id": "scratch",
+      "appearances": 2,
+      "correct": 2,
+      "distractor": 0,
+      "targetItemIds": [
+        "ja-v-1d446778d33c"
+      ],
+      "promptIds": [
+        "ja-short-wk1-taishita-01",
+        "ja-short-wk1-taishita-02"
+      ]
+    },
+    {
+      "id": "arm",
+      "appearances": 2,
+      "correct": 0,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-1d446778d33c"
+      ],
+      "promptIds": [
+        "ja-short-wk1-taishita-01",
+        "ja-short-wk1-taishita-02"
+      ]
+    },
+    {
+      "id": "leg",
+      "appearances": 2,
+      "correct": 0,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-1d446778d33c"
+      ],
+      "promptIds": [
+        "ja-short-wk1-taishita-01",
+        "ja-short-wk1-taishita-02"
+      ]
+    },
+    {
+      "id": "head",
+      "appearances": 2,
+      "correct": 0,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-1d446778d33c"
+      ],
+      "promptIds": [
+        "ja-short-wk1-taishita-01",
+        "ja-short-wk1-taishita-02"
+      ]
+    },
+    {
+      "id": "number-1",
+      "appearances": 6,
+      "correct": 2,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-5d8047464c5d",
+        "ja-v-1bedf722c04a",
+        "ja-v-7fc81b0ddd17"
+      ],
+      "promptIds": [
+        "ja-short-wk1-ichi-01",
+        "ja-short-wk1-ichi-02",
+        "ja-short-wk1-san-01",
+        "ja-short-wk1-san-02",
+        "ja-short-wk1-ni-01",
+        "ja-short-wk1-ni-02"
+      ]
+    },
+    {
+      "id": "number-2",
+      "appearances": 6,
+      "correct": 2,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-5d8047464c5d",
+        "ja-v-1bedf722c04a",
+        "ja-v-7fc81b0ddd17"
+      ],
+      "promptIds": [
+        "ja-short-wk1-ichi-01",
+        "ja-short-wk1-ichi-02",
+        "ja-short-wk1-san-01",
+        "ja-short-wk1-san-02",
+        "ja-short-wk1-ni-01",
+        "ja-short-wk1-ni-02"
+      ]
+    },
+    {
+      "id": "number-3",
+      "appearances": 6,
+      "correct": 2,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-5d8047464c5d",
+        "ja-v-1bedf722c04a",
+        "ja-v-7fc81b0ddd17"
+      ],
+      "promptIds": [
+        "ja-short-wk1-ichi-01",
+        "ja-short-wk1-ichi-02",
+        "ja-short-wk1-san-01",
+        "ja-short-wk1-san-02",
+        "ja-short-wk1-ni-01",
+        "ja-short-wk1-ni-02"
+      ]
+    },
+    {
+      "id": "number-7",
+      "appearances": 14,
+      "correct": 2,
+      "distractor": 12,
+      "targetItemIds": [
+        "ja-v-f6ed7c17c0d5",
+        "ja-v-d33ed6be2a48",
+        "ja-v-5d8047464c5d",
+        "ja-v-eda9a40b0c91",
+        "ja-v-877b9ba07a47",
+        "ja-v-1bedf722c04a",
+        "ja-v-7fc81b0ddd17"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hachi-01",
+        "ja-short-wk1-hachi-02",
+        "ja-short-wk1-kyuu-01",
+        "ja-short-wk1-kyuu-02",
+        "ja-short-wk1-ichi-01",
+        "ja-short-wk1-ichi-02",
+        "ja-short-wk1-nana-01",
+        "ja-short-wk1-nana-02",
+        "ja-short-wk1-juu-01",
+        "ja-short-wk1-juu-02",
+        "ja-short-wk1-san-01",
+        "ja-short-wk1-san-02",
+        "ja-short-wk1-ni-01",
+        "ja-short-wk1-ni-02"
+      ]
+    },
+    {
+      "id": "number-8",
+      "appearances": 8,
+      "correct": 2,
+      "distractor": 6,
+      "targetItemIds": [
+        "ja-v-f6ed7c17c0d5",
+        "ja-v-d33ed6be2a48",
+        "ja-v-eda9a40b0c91",
+        "ja-v-877b9ba07a47"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hachi-01",
+        "ja-short-wk1-hachi-02",
+        "ja-short-wk1-kyuu-01",
+        "ja-short-wk1-kyuu-02",
+        "ja-short-wk1-nana-01",
+        "ja-short-wk1-nana-02",
+        "ja-short-wk1-juu-01",
+        "ja-short-wk1-juu-02"
+      ]
+    },
+    {
+      "id": "number-9",
+      "appearances": 8,
+      "correct": 2,
+      "distractor": 6,
+      "targetItemIds": [
+        "ja-v-f6ed7c17c0d5",
+        "ja-v-d33ed6be2a48",
+        "ja-v-eda9a40b0c91",
+        "ja-v-877b9ba07a47"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hachi-01",
+        "ja-short-wk1-hachi-02",
+        "ja-short-wk1-kyuu-01",
+        "ja-short-wk1-kyuu-02",
+        "ja-short-wk1-nana-01",
+        "ja-short-wk1-nana-02",
+        "ja-short-wk1-juu-01",
+        "ja-short-wk1-juu-02"
+      ]
+    },
+    {
+      "id": "number-10",
+      "appearances": 8,
+      "correct": 2,
+      "distractor": 6,
+      "targetItemIds": [
+        "ja-v-f6ed7c17c0d5",
+        "ja-v-d33ed6be2a48",
+        "ja-v-eda9a40b0c91",
+        "ja-v-877b9ba07a47"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hachi-01",
+        "ja-short-wk1-hachi-02",
+        "ja-short-wk1-kyuu-01",
+        "ja-short-wk1-kyuu-02",
+        "ja-short-wk1-nana-01",
+        "ja-short-wk1-nana-02",
+        "ja-short-wk1-juu-01",
+        "ja-short-wk1-juu-02"
+      ]
+    },
+    {
+      "id": "people-1",
+      "appearances": 10,
+      "correct": 4,
+      "distractor": 6,
+      "targetItemIds": [
+        "ja-v-7de8b40e4f57",
+        "ja-v-ad7167347a2a",
+        "ja-v-2ef4da30cf39",
+        "ja-v-2a318f5ee1c8",
+        "ja-v-4fa716f651b2"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hitori-01",
+        "ja-short-wk1-hitori-02",
+        "ja-short-wk1-hito-01",
+        "ja-short-wk1-hito-02",
+        "ja-short-wk1-jinkou-population-01",
+        "ja-short-wk1-jinkou-population-02",
+        "ja-short-wk1-sannin-01",
+        "ja-short-wk1-sannin-02",
+        "ja-short-wk1-futari-01",
+        "ja-short-wk1-futari-02"
+      ]
+    },
+    {
+      "id": "woman",
+      "appearances": 2,
+      "correct": 2,
+      "distractor": 0,
+      "targetItemIds": [
+        "ja-v-4d9423288cb2"
+      ],
+      "promptIds": [
+        "ja-short-wk1-onna-01",
+        "ja-short-wk1-onna-02"
+      ]
+    },
+    {
+      "id": "man",
+      "appearances": 2,
+      "correct": 0,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-4d9423288cb2"
+      ],
+      "promptIds": [
+        "ja-short-wk1-onna-01",
+        "ja-short-wk1-onna-02"
+      ]
+    },
+    {
+      "id": "mouth",
+      "appearances": 4,
+      "correct": 2,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-9e64feeea5ea",
+        "ja-v-ad7167347a2a"
+      ],
+      "promptIds": [
+        "ja-short-wk1-kuchi-01",
+        "ja-short-wk1-kuchi-02",
+        "ja-short-wk1-hito-01",
+        "ja-short-wk1-hito-02"
+      ]
+    },
+    {
+      "id": "hand",
+      "appearances": 4,
+      "correct": 0,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-9e64feeea5ea",
+        "ja-v-ad7167347a2a"
+      ],
+      "promptIds": [
+        "ja-short-wk1-kuchi-01",
+        "ja-short-wk1-kuchi-02",
+        "ja-short-wk1-hito-01",
+        "ja-short-wk1-hito-02"
+      ]
+    },
+    {
+      "id": "ear",
+      "appearances": 2,
+      "correct": 0,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-9e64feeea5ea"
+      ],
+      "promptIds": [
+        "ja-short-wk1-kuchi-01",
+        "ja-short-wk1-kuchi-02"
+      ]
+    },
+    {
+      "id": "foot",
+      "appearances": 2,
+      "correct": 0,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-9e64feeea5ea"
+      ],
+      "promptIds": [
+        "ja-short-wk1-kuchi-01",
+        "ja-short-wk1-kuchi-02"
+      ]
+    },
+    {
+      "id": "entrance",
+      "appearances": 4,
+      "correct": 4,
+      "distractor": 0,
+      "targetItemIds": [
+        "ja-v-20cbd1c15a35",
+        "ja-v-82a114897d9c"
+      ],
+      "promptIds": [
+        "ja-short-wk1-iriguchi-01",
+        "ja-short-wk1-iriguchi-02",
+        "ja-short-wk1-hairu-01",
+        "ja-short-wk1-hairu-02"
+      ]
+    },
+    {
+      "id": "exit",
+      "appearances": 4,
+      "correct": 0,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-20cbd1c15a35",
+        "ja-v-82a114897d9c"
+      ],
+      "promptIds": [
+        "ja-short-wk1-iriguchi-01",
+        "ja-short-wk1-iriguchi-02",
+        "ja-short-wk1-hairu-01",
+        "ja-short-wk1-hairu-02"
+      ]
+    },
+    {
+      "id": "people-3",
+      "appearances": 8,
+      "correct": 3,
+      "distractor": 5,
+      "targetItemIds": [
+        "ja-v-7de8b40e4f57",
+        "ja-v-2ef4da30cf39",
+        "ja-v-2a318f5ee1c8",
+        "ja-v-4fa716f651b2"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hitori-01",
+        "ja-short-wk1-hitori-02",
+        "ja-short-wk1-jinkou-population-01",
+        "ja-short-wk1-jinkou-population-02",
+        "ja-short-wk1-sannin-01",
+        "ja-short-wk1-sannin-02",
+        "ja-short-wk1-futari-01",
+        "ja-short-wk1-futari-02"
+      ]
+    },
+    {
+      "id": "people-4",
+      "appearances": 8,
+      "correct": 0,
+      "distractor": 8,
+      "targetItemIds": [
+        "ja-v-7de8b40e4f57",
+        "ja-v-2ef4da30cf39",
+        "ja-v-2a318f5ee1c8",
+        "ja-v-4fa716f651b2"
+      ],
+      "promptIds": [
+        "ja-short-wk1-hitori-01",
+        "ja-short-wk1-hitori-02",
+        "ja-short-wk1-jinkou-population-01",
+        "ja-short-wk1-jinkou-population-02",
+        "ja-short-wk1-sannin-01",
+        "ja-short-wk1-sannin-02",
+        "ja-short-wk1-futari-01",
+        "ja-short-wk1-futari-02"
+      ]
+    },
+    {
+      "id": "large-box",
+      "appearances": 4,
+      "correct": 2,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-f6377dcbb564",
+        "ja-v-26d0ad7af566"
+      ],
+      "promptIds": [
+        "ja-short-wk1-ookii-01",
+        "ja-short-wk1-ookii-02",
+        "ja-short-wk1-ookisa-01",
+        "ja-short-wk1-ookisa-02"
+      ]
+    },
+    {
+      "id": "small-box",
+      "appearances": 4,
+      "correct": 0,
+      "distractor": 4,
+      "targetItemIds": [
+        "ja-v-f6377dcbb564",
+        "ja-v-26d0ad7af566"
+      ],
+      "promptIds": [
+        "ja-short-wk1-ookii-01",
+        "ja-short-wk1-ookii-02",
+        "ja-short-wk1-ookisa-01",
+        "ja-short-wk1-ookisa-02"
+      ]
+    },
+    {
+      "id": "large-ball",
+      "appearances": 4,
+      "correct": 1,
+      "distractor": 3,
+      "targetItemIds": [
+        "ja-v-f6377dcbb564",
+        "ja-v-26d0ad7af566"
+      ],
+      "promptIds": [
+        "ja-short-wk1-ookii-01",
+        "ja-short-wk1-ookii-02",
+        "ja-short-wk1-ookisa-01",
+        "ja-short-wk1-ookisa-02"
+      ]
+    },
+    {
+      "id": "small-ball",
+      "appearances": 4,
+      "correct": 1,
+      "distractor": 3,
+      "targetItemIds": [
+        "ja-v-f6377dcbb564",
+        "ja-v-26d0ad7af566"
+      ],
+      "promptIds": [
+        "ja-short-wk1-ookii-01",
+        "ja-short-wk1-ookii-02",
+        "ja-short-wk1-ookisa-01",
+        "ja-short-wk1-ookisa-02"
+      ]
+    },
+    {
+      "id": "lift-box",
+      "appearances": 8,
+      "correct": 2,
+      "distractor": 6,
+      "targetItemIds": [
+        "ja-v-20cbd1c15a35",
+        "ja-v-82a114897d9c",
+        "ja-v-6d1d47c9258e",
+        "ja-v-06a4c07236b5"
+      ],
+      "promptIds": [
+        "ja-short-wk1-iriguchi-01",
+        "ja-short-wk1-iriguchi-02",
+        "ja-short-wk1-hairu-01",
+        "ja-short-wk1-hairu-02",
+        "ja-short-wk1-ageru-01",
+        "ja-short-wk1-ageru-02",
+        "ja-short-wk1-sageru-01",
+        "ja-short-wk1-sageru-02"
+      ]
+    },
+    {
+      "id": "lower-box",
+      "appearances": 8,
+      "correct": 2,
+      "distractor": 6,
+      "targetItemIds": [
+        "ja-v-20cbd1c15a35",
+        "ja-v-82a114897d9c",
+        "ja-v-6d1d47c9258e",
+        "ja-v-06a4c07236b5"
+      ],
+      "promptIds": [
+        "ja-short-wk1-iriguchi-01",
+        "ja-short-wk1-iriguchi-02",
+        "ja-short-wk1-hairu-01",
+        "ja-short-wk1-hairu-02",
+        "ja-short-wk1-ageru-01",
+        "ja-short-wk1-ageru-02",
+        "ja-short-wk1-sageru-01",
+        "ja-short-wk1-sageru-02"
+      ]
+    },
+    {
+      "id": "fuji",
+      "appearances": 2,
+      "correct": 2,
+      "distractor": 0,
+      "targetItemIds": [
+        "ja-v-0181fab128a1"
+      ],
+      "promptIds": [
+        "ja-short-wk1-fujisan-01",
+        "ja-short-wk1-fujisan-02"
+      ]
+    },
+    {
+      "id": "artificial-flower",
+      "appearances": 2,
+      "correct": 1,
+      "distractor": 1,
+      "targetItemIds": [
+        "ja-v-3fef4445ce13"
+      ],
+      "promptIds": [
+        "ja-short-wk1-jinkou-artificial-01",
+        "ja-short-wk1-jinkou-artificial-02"
+      ]
+    },
+    {
+      "id": "artificial-grass",
+      "appearances": 2,
+      "correct": 1,
+      "distractor": 1,
+      "targetItemIds": [
+        "ja-v-3fef4445ce13"
+      ],
+      "promptIds": [
+        "ja-short-wk1-jinkou-artificial-01",
+        "ja-short-wk1-jinkou-artificial-02"
+      ]
+    },
+    {
+      "id": "natural-flower",
+      "appearances": 2,
+      "correct": 0,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-3fef4445ce13"
+      ],
+      "promptIds": [
+        "ja-short-wk1-jinkou-artificial-01",
+        "ja-short-wk1-jinkou-artificial-02"
+      ]
+    },
+    {
+      "id": "natural-grass",
+      "appearances": 2,
+      "correct": 0,
+      "distractor": 2,
+      "targetItemIds": [
+        "ja-v-3fef4445ce13"
+      ],
+      "promptIds": [
+        "ja-short-wk1-jinkou-artificial-01",
+        "ja-short-wk1-jinkou-artificial-02"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # WaniKani level 1 contextual quizzes (#183, #197)
 
+For the owner's later shorter simple-context proposal with frequent shared picture reuse, see [the 74-prompt draft](../short-level-1/README.md) in #253. It is separate from the accepted bank and frozen approvals documented below.
+
 The bank covers 29 targets, with two simple and two contrastive contexts per target, two questions per context and four choices per question: 116 contexts and 232 questions. Every question must require the meaning of its vocabulary target, including questions about another detail. All 232 original and counterfactual answer keys receive individual semantic review; questions that already pass can remain, and failed questions or sentences are rewritten.
 
 Questions require interpreting quantities, inverse relations, resulting states, request intent, comparisons or paraphrases. Copying a uniquely repeated sentence fragment, changing only a verb ending, answering from the question alone, guessing an unstated intention, or answering while ignoring the target does not qualify. Masking the target must make the answer indeterminate; redundant clues such as an unrelated action cannot replace the target meaning. Simple questions stay within one short coherent situation; contrastive questions bind additional facts. Grammar stays roughly within Genki I and supporting vocabulary remains beginner-friendly.

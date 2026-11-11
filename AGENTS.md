@@ -52,6 +52,7 @@ Assign roles per task; use fewer workers when work overlaps. Use GitHub Issues a
 - The merge gate owns app/database/browser validation. Main reuses only successful Checks proof for its exact Git tree and falls back to full checks otherwise. Publish one production-configured build, then run only the bounded read-only live smoke; do not repeat user journeys during deployment.
 - Review test quality as well as the implementation. Before integration, run the relevant checks and the configured lint, type checks, tests, and production build. Report actual commands and results; do not claim unavailable checks passed.
 - Check audio and interaction on the real iPhone at playable milestones and releases. Browser emulation supplements device testing.
+- Keep local automated tests silent. Use `e2e/fixtures.ts` or its shared `e2e/quiet-audio.ts` media helper in separate demo runners, and use `E2E_AUDIO=quiet` for local browser commands. Preserve native loading, decoding, promises, events and playback clocks; do not silence tests by skipping or mocking playback.
 
 ## Model guidance
 
@@ -72,6 +73,8 @@ When another worktree is serving the default preview port, use `E2E_PORT=4199 np
 Some sandboxes restrict npm network access and local listening servers. Use the available approved execution path or GitHub Actions when local preview is unavailable. Keep `SOURCE_REVISION` consistent between build and browser tests when setting it. Never claim emulated WebKit is a real iPhone test.
 
 Contextual quiz text preparation for issue #119 uses `npm run content:contextual:validate` for a read-only preflight and `npm run content:contextual:review` to rebuild `artifacts/contextual-pilot/review.html`. The review command's `-- --github` option prints a readable GitHub review. These commands do not approve content, generate speech, or activate practice cards. Obtain owner approval of the actual pilot text before speech generation, as recorded in PLAN.md. The usual `npm test` includes the checked-in pilot's validation and review-tool regression checks.
+
+New short simple contexts follow the owner's [short-context authoring rules](content/contextual/short-level-1/README.md#authoring-rules): hear the word in a short sentence/question, choose shared answer sets before drafting, and reuse exact card IDs frequently across words and correct/distractor roles. Direct picture matching is sufficient; do not reintroduce the old contrastive inference requirements. Preserve missing-art labels and existing approval states. The level-1 draft has two prompts for each of all 37 source-level words; its review does not activate or replace accepted practice.
 
 Local ElevenLabs generation loads `ELEVENLABS_API_KEY` from the command environment or `~/.config/kikimashta/elevenlabs.env` (private mode 600), so separate worktrees can use one secret outside Git. Read it only through `scripts/content/elevenlabs-key.mjs` for generation. Never print, copy into the repository, include in browser code, or record its value in logs/provenance. See `docs/ELEVENLABS.md` for setup.
 

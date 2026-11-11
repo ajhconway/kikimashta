@@ -13,8 +13,9 @@ const app = existsSync(resolve(repository, 'src/components/ContextualQuiz.tsx'))
 export default defineConfig({
   root: demo,
   plugins: [react()],
-  resolve: { alias: { '@app': app }, dedupe: ['react', 'react-dom'] },
-  build: { outDir: resolve(demo, 'dist'), emptyOutDir: true },
+  resolve: { alias: { '@app': app, '@content': resolve(app, '../content') }, dedupe: ['react', 'react-dom'] },
+  build: { outDir: resolve(demo, 'dist'), emptyOutDir: true,
+    rollupOptions: { input: { main: resolve(demo, 'index.html'), drafts: resolve(demo, 'drafts.html') } } },
   server: { host: '127.0.0.1', port: 5310, strictPort: true },
   preview: { host: '127.0.0.1', port: 5310, strictPort: true },
 });

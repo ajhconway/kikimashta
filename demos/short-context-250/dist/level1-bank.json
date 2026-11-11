@@ -1,0 +1,3741 @@
+{
+  "schemaVersion": 1,
+  "id": "ja-short-level-1-v1",
+  "language": "ja-JP",
+  "issue": 253,
+  "source": {
+    "catalog": "content/catalog/ja.json",
+    "catalogSha256": "568071d16261d48f759c38df306ee218d86755582427e392bf3955f77a4b5778",
+    "catalogCommit": "ae7e993f2c39f2a7d7ad2b76d0f0a67c67a69df0",
+    "selection": {
+      "sourceLevel": 1
+    },
+    "demoCommit": "522f8dc2aa259e9a272818f2da8ec7043cdd9445"
+  },
+  "policy": {
+    "purpose": "Hear the target in a short sentence or question; direct picture matching is sufficient.",
+    "totalPerWord": 2,
+    "sharedCards": "Exact card IDs, source bytes and status are shared across contexts and correct/distractor roles.",
+    "question": "At most one short question, omitted when the sentence directly identifies the answer.",
+    "status": "Text and shared-card review draft; no new audio, artwork generation or production activation."
+  },
+  "words": [
+    {
+      "id": "ja-v-c0f58bfab324",
+      "text": "上",
+      "reading": "うえ",
+      "meaning": "Above"
+    },
+    {
+      "id": "ja-v-2cc50c2d66a6",
+      "text": "大人",
+      "reading": "おとな",
+      "meaning": "Adult"
+    },
+    {
+      "id": "ja-v-7de8b40e4f57",
+      "text": "一人",
+      "reading": "ひとり",
+      "meaning": "Alone"
+    },
+    {
+      "id": "ja-v-3fef4445ce13",
+      "text": "人工",
+      "reading": "じんこう",
+      "meaning": "Artificial"
+    },
+    {
+      "id": "ja-v-520308b3c3b4",
+      "text": "下",
+      "reading": "した",
+      "meaning": "Below"
+    },
+    {
+      "id": "ja-v-f6377dcbb564",
+      "text": "大きい",
+      "reading": "おおきい",
+      "meaning": "Big"
+    },
+    {
+      "id": "ja-v-f6ed7c17c0d5",
+      "text": "八",
+      "reading": "はち",
+      "meaning": "Eight"
+    },
+    {
+      "id": "ja-v-6c9351ae67e6",
+      "text": "八つ",
+      "reading": "やっつ",
+      "meaning": "Eight Things"
+    },
+    {
+      "id": "ja-v-20cbd1c15a35",
+      "text": "入り口",
+      "reading": "いりぐち",
+      "meaning": "Entrance"
+    },
+    {
+      "id": "ja-v-1d446778d33c",
+      "text": "大した",
+      "reading": "たいした",
+      "meaning": "Great"
+    },
+    {
+      "id": "ja-v-ddd9dca106e2",
+      "text": "山",
+      "reading": "やま",
+      "meaning": "Mountain"
+    },
+    {
+      "id": "ja-v-9e64feeea5ea",
+      "text": "口",
+      "reading": "くち",
+      "meaning": "Mouth"
+    },
+    {
+      "id": "ja-v-0181fab128a1",
+      "text": "ふじ山",
+      "reading": "ふじさん",
+      "meaning": "Mt Fuji"
+    },
+    {
+      "id": "ja-v-d33ed6be2a48",
+      "text": "九",
+      "reading": "きゅう",
+      "meaning": "Nine"
+    },
+    {
+      "id": "ja-v-0d0163a40587",
+      "text": "九つ",
+      "reading": "ここのつ",
+      "meaning": "Nine Things"
+    },
+    {
+      "id": "ja-v-5d8047464c5d",
+      "text": "一",
+      "reading": "いち",
+      "meaning": "One"
+    },
+    {
+      "id": "ja-v-277587e6fa07",
+      "text": "一つ",
+      "reading": "ひとつ",
+      "meaning": "One Thing"
+    },
+    {
+      "id": "ja-v-ad7167347a2a",
+      "text": "人",
+      "reading": "ひと",
+      "meaning": "Person"
+    },
+    {
+      "id": "ja-v-fae75d2d18b2",
+      "text": "下さい",
+      "reading": "ください",
+      "meaning": "Please Give Me"
+    },
+    {
+      "id": "ja-v-2ef4da30cf39",
+      "text": "人口",
+      "reading": "じんこう",
+      "meaning": "Population"
+    },
+    {
+      "id": "ja-v-33c00f4a1a8b",
+      "text": "力",
+      "reading": "ちから",
+      "meaning": "Power"
+    },
+    {
+      "id": "ja-v-46f8fe65f218",
+      "text": "川",
+      "reading": "かわ",
+      "meaning": "River"
+    },
+    {
+      "id": "ja-v-eda9a40b0c91",
+      "text": "七",
+      "reading": "なな",
+      "meaning": "Seven"
+    },
+    {
+      "id": "ja-v-f6bc974a7405",
+      "text": "七つ",
+      "reading": "ななつ",
+      "meaning": "Seven Things"
+    },
+    {
+      "id": "ja-v-26d0ad7af566",
+      "text": "大きさ",
+      "reading": "おおきさ",
+      "meaning": "Size"
+    },
+    {
+      "id": "ja-v-877b9ba07a47",
+      "text": "十",
+      "reading": "じゅう",
+      "meaning": "Ten"
+    },
+    {
+      "id": "ja-v-1bedf722c04a",
+      "text": "三",
+      "reading": "さん",
+      "meaning": "Three"
+    },
+    {
+      "id": "ja-v-2a318f5ee1c8",
+      "text": "三人",
+      "reading": "さんにん",
+      "meaning": "Three People"
+    },
+    {
+      "id": "ja-v-8b887bc8af0c",
+      "text": "三つ",
+      "reading": "みっつ",
+      "meaning": "Three Things"
+    },
+    {
+      "id": "ja-v-82a114897d9c",
+      "text": "入る",
+      "reading": "はいる",
+      "meaning": "To Enter"
+    },
+    {
+      "id": "ja-v-6d1d47c9258e",
+      "text": "上げる",
+      "reading": "あげる",
+      "meaning": "To Lift Something"
+    },
+    {
+      "id": "ja-v-06a4c07236b5",
+      "text": "下げる",
+      "reading": "さげる",
+      "meaning": "To Lower Something"
+    },
+    {
+      "id": "ja-v-7fc81b0ddd17",
+      "text": "二",
+      "reading": "に",
+      "meaning": "Two"
+    },
+    {
+      "id": "ja-v-4fa716f651b2",
+      "text": "二人",
+      "reading": "ふたり",
+      "meaning": "Two People"
+    },
+    {
+      "id": "ja-v-bb85f028d944",
+      "text": "二つ",
+      "reading": "ふたつ",
+      "meaning": "Two Things"
+    },
+    {
+      "id": "ja-v-c70f2920b2de",
+      "text": "力いっぱい",
+      "reading": "ちからいっぱい",
+      "meaning": "With All One's Strength"
+    },
+    {
+      "id": "ja-v-4d9423288cb2",
+      "text": "女",
+      "reading": "おんな",
+      "meaning": "Woman"
+    }
+  ],
+  "answerSets": {
+    "apples": [
+      "apples-1",
+      "apples-2",
+      "apples-3",
+      "apples-4"
+    ],
+    "cookies": [
+      "cookies-1",
+      "cookies-2",
+      "cookies-3",
+      "cookies-4"
+    ],
+    "oranges": [
+      "oranges-6",
+      "oranges-7",
+      "oranges-8",
+      "oranges-9"
+    ],
+    "eggs": [
+      "eggs-6",
+      "eggs-7",
+      "eggs-8",
+      "eggs-9"
+    ],
+    "numbers-low": [
+      "number-1",
+      "number-2",
+      "number-3",
+      "number-7"
+    ],
+    "numbers-high": [
+      "number-7",
+      "number-8",
+      "number-9",
+      "number-10"
+    ],
+    "people-count": [
+      "people-1",
+      "adults",
+      "people-3",
+      "people-4"
+    ],
+    "adults": [
+      "adults",
+      "children",
+      "babies",
+      "cats"
+    ],
+    "person": [
+      "people-1",
+      "cats",
+      "mouth",
+      "hand"
+    ],
+    "woman": [
+      "woman",
+      "man",
+      "cats",
+      "babies"
+    ],
+    "spatial": [
+      "box-above",
+      "box-below",
+      "box-left",
+      "box-right"
+    ],
+    "houses": [
+      "house-mountain",
+      "house-river",
+      "house-sea",
+      "house-city"
+    ],
+    "places": [
+      "mountain",
+      "river",
+      "park",
+      "sea"
+    ],
+    "landmarks": [
+      "fuji",
+      "river",
+      "park",
+      "sea"
+    ],
+    "body": [
+      "mouth",
+      "hand",
+      "ear",
+      "foot"
+    ],
+    "effort": [
+      "push-hard",
+      "push-gently",
+      "pull",
+      "carry"
+    ],
+    "injuries": [
+      "scratch",
+      "arm",
+      "leg",
+      "head"
+    ],
+    "doorways": [
+      "entrance",
+      "exit",
+      "lift-box",
+      "lower-box"
+    ],
+    "movement": [
+      "lift-box",
+      "lower-box",
+      "push-hard",
+      "pull"
+    ],
+    "size": [
+      "large-box",
+      "small-box",
+      "large-ball",
+      "small-ball"
+    ],
+    "manufactured": [
+      "artificial-flower",
+      "natural-flower",
+      "artificial-grass",
+      "natural-grass"
+    ]
+  },
+  "cards": [
+    {
+      "id": "apples-1",
+      "label": "1 apple",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/apples-1.png",
+        "sha256": "fd6c2a42414db4e6b41e3cad7f975ad337d92a79764cb620f8ce3a888e795cfc"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "apples-1",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "apples-2",
+      "label": "2 apples",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/apples-2.png",
+        "sha256": "4e076e8542d87c43e35337296953244e4fff473c40f77f9abdea9d8cc3c8b750"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "apples-2",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "apples-3",
+      "label": "3 apples",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/apples-3.png",
+        "sha256": "a555378fe966deea4d5318980fdae39e019a80c316770b185d7dc11ea14d21ee"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "apples-3",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "apples-4",
+      "label": "4 apples",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/apples-4.png",
+        "sha256": "8d7ee53ea114f565d8723f502db1fa44a2570cd609bd3f548b14a95fcce04544"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "apples-4",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "cookies-1",
+      "label": "1 cookies",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/cookies-1.png",
+        "sha256": "c8d21225f4aa9640ab892efb527bb349377bcea3574ebcfcb0eb945b1a972a01"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "cookies-1",
+        "status": "previously-approved",
+        "approvalEvidence": "content/spanish-food-2/artwork-acceptance.json"
+      }
+    },
+    {
+      "id": "cookies-2",
+      "label": "2 cookies",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/cookies-2.png",
+        "sha256": "fd8e67d059dcf9ce8fae6248a3ac12f4c441ae623448a6becf101d3699d7a916"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "cookies-2",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "cookies-3",
+      "label": "3 cookies",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/cookies-3.png",
+        "sha256": "a3e31090d8c1b404b373a178d9059dad512ac427ad323b1f005dca03d1067678"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "cookies-3",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "cookies-4",
+      "label": "4 cookies",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/cookies-4.png",
+        "sha256": "7c0bd36220421d01776f5848e60d4248f4b51fb92b283ceebedcbb1266ed3ffe"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "cookies-4",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "oranges-6",
+      "label": "6 oranges",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/oranges-6.png",
+        "sha256": "45c2938d68a5be935a2fab2517656c45c9f2ec3d869ff3bc9554b7e157a6ec0c"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "oranges-6",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "oranges-7",
+      "label": "7 oranges",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/oranges-7.png",
+        "sha256": "f3e8a114e7f5b9e788114e513596bc5fa9730e693490d4a111d4006c87d9bb10"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "oranges-7",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "oranges-8",
+      "label": "8 oranges",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/oranges-8.png",
+        "sha256": "0bdac0b0a6ab1348c18a360e7252450d6ab48575d6e91d7b533a11e60927906f"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "oranges-8",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "oranges-9",
+      "label": "9 oranges",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/oranges-9.png",
+        "sha256": "d670af1a143d9c71634242db731ee6f3cdc81dffed3a844aaae69620eb402027"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "oranges-9",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "eggs-6",
+      "label": "6 eggs",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/eggs-6.png",
+        "sha256": "47f882bf471ae34c8c5a2fd82db7c00146788f10538e905f0698860b1ff17e65"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "eggs-6",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "eggs-7",
+      "label": "7 eggs",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/eggs-7.png",
+        "sha256": "1a43cc4a0351bb4a64a53678e9949f9720a55dd900f56e50335b4b0a13a62e11"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "eggs-7",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "eggs-8",
+      "label": "8 eggs",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/eggs-8.png",
+        "sha256": "9cf80c0b6541dd1a1951428024f26b930b683234f9aad87d87e87abf90fa73cb"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "eggs-8",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "eggs-9",
+      "label": "9 eggs",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/eggs-9.png",
+        "sha256": "97f7b3316e4d1c77bdd532e526af735a45affc1defdbac0e5658cfa5763e8319"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "eggs-9",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "box-above",
+      "label": "The box is above the cat",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/box-above.png",
+        "sha256": "42aab105677befe3f8000a36f78aa288ea0dcc83af747c1ade827fb6e65de899"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "box-above",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "box-below",
+      "label": "The box is below the cat",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/box-below.png",
+        "sha256": "52c00e6a3d65246fa590db6e96314e2f7e9f1975f33f89d47b7c0e1c8e79addc"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "box-below",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "box-left",
+      "label": "The box is to the left of the cat",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/box-left.png",
+        "sha256": "eed092ae594b8a369caf213dc6467dd59dd71aa8fc1006078feda1c00b8706f5"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "box-left",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "box-right",
+      "label": "The box is to the right of the cat",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/box-right.png",
+        "sha256": "4517b9400d34166f6573921fb1f0da094e7b6c3cf52e17a9ba5fd71a75f5744e"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "box-right",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "house-mountain",
+      "label": "A house on a mountain",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/house-mountain.png",
+        "sha256": "a00f9c269739ab733d1534a9634c35d47802ad13575b8172ee1853e27f665833"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "house-mountain",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "house-river",
+      "label": "A house beside a river",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/house-river.png",
+        "sha256": "7776766597ac00557da8c004e1cbc072704cea4f7a821eb64ab1e99f4efcf3f2"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "house-river",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "house-sea",
+      "label": "A house by the sea",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/house-sea.png",
+        "sha256": "5b56a73cce5fe1b4e9d5e1958e4f519ac9ca074c88659461359591633af0da27"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "house-sea",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "house-city",
+      "label": "A house in a city",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/house-city.png",
+        "sha256": "3bab27f0fb538e50113973aca98312e0d080d3e2a6b33d609b65b041ad69a387"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "house-city",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "mountain",
+      "label": "A mountain",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/mountain.png",
+        "sha256": "e3cd97f96a43a1f478e84303839208e81b8de425463cf3be365ae817c18348e1"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "mountain",
+        "status": "previously-approved",
+        "approvalEvidence": "Batch 01 approval; content/card-regeneration/activation.json"
+      }
+    },
+    {
+      "id": "river",
+      "label": "A river",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/river.png",
+        "sha256": "0be609b2f37f06a6796465e0561a8bb36e423ab4404c8ba812a6593399454bf8"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "river",
+        "status": "previously-approved",
+        "approvalEvidence": "Batch 03 approval; content/card-regeneration/activation.json"
+      }
+    },
+    {
+      "id": "park",
+      "label": "A park",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/park.png",
+        "sha256": "5f3ec1ed6ad4fe9cdd6d6b2d6e7bdd00b96800a0f04bac532a416908945cc9ff"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "park",
+        "status": "previously-approved",
+        "approvalEvidence": "content/spanish-travel-2/acceptance.json and activation.json"
+      }
+    },
+    {
+      "id": "sea",
+      "label": "The sea",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/sea.png",
+        "sha256": "b00fb5b1cd5269fcab76b84d08dd42727dd746c65b39eb6493f123089727422f"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "sea",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "adults",
+      "label": "Two adults",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/adults.png",
+        "sha256": "25b87adade8ceb7228423ec54c8cc92d90fa5cf15afffb4914daa5c95a013004"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "adults",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "children",
+      "label": "Two children",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/children.png",
+        "sha256": "7286ab4e1a8d17ff051d78051aa230f664d851f679ddec71b36c2ebfcf3b5a06"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "children",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "babies",
+      "label": "Two babies",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/babies.png",
+        "sha256": "b60315bf8800e65fb439d075feafa44cfe138a1367fa217f49318d9963f57e9d"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "babies",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "cats",
+      "label": "Two cats",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/cats.png",
+        "sha256": "6b8d927e71d6750d39e6dcee2e65e3f1d1b15885c9062d9cc377010c41d7f341"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "cats",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "push-hard",
+      "label": "Pushing with all your strength",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/push-hard.png",
+        "sha256": "8ce97d5414552981a627cd2164022369defc00913b9e530799d18c4d9cae30ed"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "push-hard",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "push-gently",
+      "label": "Pushing gently with one finger",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/push-gently.png",
+        "sha256": "f6c3680225128b9544c0601274a083aecf2443e672fb686de16919ed57f96a1b"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "push-gently",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "pull",
+      "label": "Pulling the box",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/pull.png",
+        "sha256": "f0007ef5dcf530c17df8cd750dae2b9cbddcb78b4e9c0a43bc5c6c5c1a575bff"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "pull",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "carry",
+      "label": "Carrying the box",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/carry.png",
+        "sha256": "d25677c9b2b04247c619f4b9626a8d42485e7bb6bdc735c8422cfe472810882c"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "carry",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "scratch",
+      "label": "A small scratch on an otherwise healthy arm",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/scratch.png",
+        "sha256": "577111a1d4ac578be1af5c88e11cf1d178489d4909e069eda5a30187654bc62f"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "scratch",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "arm",
+      "label": "A broken arm in a cast",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/arm.png",
+        "sha256": "c304e5c2d9ff8607d236427a76ffe30ecd87d841a1a4b9dac39e492b65bbe040"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "arm",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "leg",
+      "label": "A broken leg in a cast with crutches",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/leg.png",
+        "sha256": "fddbfbfc0dc2a98da7f1c822c718aed3be919726885f6bdf6cc3c5c6b1d9cfb6"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "leg",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "head",
+      "label": "A head injury with extensive bandaging",
+      "kind": "image",
+      "image": {
+        "path": "demos/short-context-250/public/images/head.png",
+        "sha256": "30ff5429bab713cbe15a9edfa6584a87c452adb94ccee7f344fd75db9536830e"
+      },
+      "source": {
+        "kind": "demo-250",
+        "manifest": "demos/short-context-250/artwork-v2/manifest.json",
+        "assetId": "head",
+        "status": "pending-owner-review",
+        "approvalEvidence": null
+      }
+    },
+    {
+      "id": "number-1",
+      "label": "Numbered ball 1",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-5d8047464c5d-41d9d9693a55.png",
+        "sha256": "546a9b08498ab65aa82b2971da5559b1f55a631da670771f75ea3c82a6c0b859"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-5d8047464c5d",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "A pool ball numbered 1."
+      }
+    },
+    {
+      "id": "number-2",
+      "label": "Numbered ball 2",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-7fc81b0ddd17-f452fdbf00ec.png",
+        "sha256": "1ab2887d8d25f9c7cd42c099292889c63d01bb1310ece39bc6de2f20d23e08f6"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-7fc81b0ddd17",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "A pool ball numbered 2."
+      }
+    },
+    {
+      "id": "number-3",
+      "label": "Numbered ball 3",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-1bedf722c04a-70f41e9e1976.png",
+        "sha256": "969c439e8b006e0530542a4e55d763601cc2c617de4de0c6f5b06243def99a16"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-1bedf722c04a",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "A pool ball numbered 3."
+      }
+    },
+    {
+      "id": "number-7",
+      "label": "Numbered ball 7",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-eda9a40b0c91-2c2f646ef82b.png",
+        "sha256": "80128b44f918253f3e233a05dd077b41a268383209ac2ef69cad5a638a5f20a4"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-eda9a40b0c91",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "A pool ball numbered 7."
+      }
+    },
+    {
+      "id": "number-8",
+      "label": "Numbered ball 8",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-f6ed7c17c0d5-348959e35464.png",
+        "sha256": "b9dc10e945857db8342d9e633b7f63360e1e8536802774e66ea6dc3dfd14c510"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-f6ed7c17c0d5",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "A pool ball numbered 8."
+      }
+    },
+    {
+      "id": "number-9",
+      "label": "Numbered ball 9",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-d33ed6be2a48-a86e376fecad.png",
+        "sha256": "a79d533f2a487b22a09870ab4d4d6844c3cf74dda044f2f692b3df2ab36a701c"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-d33ed6be2a48",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "A pool ball numbered 9."
+      }
+    },
+    {
+      "id": "number-10",
+      "label": "Numbered ball 10",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-877b9ba07a47-6beebf94c4d2.png",
+        "sha256": "68962050c0baf29dfb46fc7bbccb5086354b8900929773046266b0be98b405b3"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-877b9ba07a47",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "A pool ball numbered 10."
+      }
+    },
+    {
+      "id": "people-1",
+      "label": "One human",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-ad7167347a2a-b26b917cda8d.jpg",
+        "sha256": "cd1fa47ae7c9774b6522f208ca569c1129668e5eabd504243524db4a6aa82a2c"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-ad7167347a2a",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "A standing person in a pink shirt and lavender trousers"
+      }
+    },
+    {
+      "id": "woman",
+      "label": "Woman character",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-f25546e67181-1b43ca60111b.png",
+        "sha256": "2be3b2cb708ece6f029a82d323e4c2233a8998c980e459531f1cda382a4090c4"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-f25546e67181",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "An adult woman standing in ordinary casual clothes."
+      }
+    },
+    {
+      "id": "man",
+      "label": "Man character",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-4b9dfeafcab4-931e87e39cf7.png",
+        "sha256": "fda388a79e1e1840b590c71f767d2eff4c77a95aacf205c7c641e15bf3b4d135"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-4b9dfeafcab4",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "An adult man standing in a teal shirt and lavender trousers."
+      }
+    },
+    {
+      "id": "mouth",
+      "label": "Mouth",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-9e64feeea5ea-5cb01f1fb407.jpg",
+        "sha256": "8fc6b9393d1083bb93f0fbe55f60e470b829107119ff9feceaae3fc047c38e18"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-9e64feeea5ea",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "An open smiling mouth with white teeth and a pink tongue."
+      }
+    },
+    {
+      "id": "hand",
+      "label": "Hand",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-b1ff052549ed-cdb61c07af09.jpg",
+        "sha256": "916f6ec2b917c193243c2ded76d32230fe23798573d821aae2bfc225724be3ef"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-b1ff052549ed",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "An open palm with one thumb and four fingers"
+      }
+    },
+    {
+      "id": "ear",
+      "label": "Ear",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-dca5c9fc5908-0039c5a352ff.jpg",
+        "sha256": "189288697cb9b6c810bf334635e547d372c797bff735553288440ee0242c0724"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-dca5c9fc5908",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "A human ear."
+      }
+    },
+    {
+      "id": "foot",
+      "label": "Foot",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-64289653ec1d-3778add185bb.jpg",
+        "sha256": "fffbaf5e8fa39bbcb54642f85af82fb3c097f9ba89a05b60b6f9d5e4d8738db2"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-64289653ec1d",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "A bare foot with five toes"
+      }
+    },
+    {
+      "id": "entrance",
+      "label": "Doorway with inward arrow",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-20cbd1c15a35-6a417da9f40d.png",
+        "sha256": "0483eb9f17e6dc27cca5d7c50585d4477761a2809e2459aa8baa406845c9635f"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-20cbd1c15a35",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "An open doorway with a thick curved gold arrow pointing inward to the center."
+      }
+    },
+    {
+      "id": "exit",
+      "label": "Doorway with outward arrow",
+      "kind": "image",
+      "image": {
+        "path": "public/images/approved/ja-v-a19157e62dee-4910376aa74e.png",
+        "sha256": "52bf83bb8120b83716f28dbc93a46c03ea91a4b7d8e7d78d20f8857142f536eb"
+      },
+      "source": {
+        "kind": "existing-approved",
+        "itemId": "ja-v-a19157e62dee",
+        "catalog": "content/catalog/ja.json",
+        "status": "previously-approved",
+        "description": "An open doorway with a thick curved gold arrow pointing outward from the center."
+      }
+    },
+    {
+      "id": "people-3",
+      "label": "Three adult humans",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "Exactly three adult human characters, all fully visible with separate silhouettes and no background people. Use the same character/style family as the two-adult demo card. No numeral labels."
+    },
+    {
+      "id": "people-4",
+      "label": "Four adult humans",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "Exactly four adult human characters, all fully visible with separate silhouettes and no background people. Match people-3 and the two-adult demo card. No numeral labels."
+    },
+    {
+      "id": "large-box",
+      "label": "Large box",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "One large box; match the other three size-family cards, with the same neutral scale reference in the same position. Change only object and relative size. All subjects fully visible; no size labels or arrows. Large/small must be clear at answer-card size."
+    },
+    {
+      "id": "small-box",
+      "label": "Small box",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "One small box; match the other three size-family cards, with the same neutral scale reference in the same position. Change only object and relative size. All subjects fully visible; no size labels or arrows. Large/small must be clear at answer-card size."
+    },
+    {
+      "id": "large-ball",
+      "label": "Large ball",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "One large ball; match the other three size-family cards, with the same neutral scale reference in the same position. Change only object and relative size. All subjects fully visible; no size labels or arrows. Large/small must be clear at answer-card size."
+    },
+    {
+      "id": "small-ball",
+      "label": "Small ball",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "One small ball; match the other three size-family cards, with the same neutral scale reference in the same position. Change only object and relative size. All subjects fully visible; no size labels or arrows. Large/small must be clear at answer-card size."
+    },
+    {
+      "id": "lift-box",
+      "label": "Lifting the box",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "Kiku lifting a box upward with both paws; clearly grounded starting position and one upward motion arrow. Match lower-box exactly except movement direction. No extra boxes, duplicate/ghost limbs or numerals."
+    },
+    {
+      "id": "lower-box",
+      "label": "Lowering the box",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "Kiku lowering the same box toward the floor with both paws and one downward motion arrow. Match lift-box exactly except movement direction. No extra boxes, duplicate/ghost limbs or numerals."
+    },
+    {
+      "id": "fuji",
+      "label": "Mount Fuji",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "Recognizable symmetrical Mount Fuji silhouette and characteristic snow cap, whole landscape, in the established illustration style. Avoid using a generic mountain as a Fuji identity cue. This is a familiar landmark recognition card; review recognizability before acceptance."
+    },
+    {
+      "id": "artificial-flower",
+      "label": "Artificial flower",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "An obviously manufactured plastic flower with broad molded construction, visibly rigid petals and a plastic stem/joint. Match natural-flower framing/scale. Do not rely on color, tiny seams, a robot symbol or labels. If the distinction is not clear at small card size, revise the shared concept before acceptance."
+    },
+    {
+      "id": "artificial-grass",
+      "label": "Artificial grass",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "Artificial turf shown as a partly rolled piece with its broad manufactured backing clearly visible. Match natural-grass framing/scale; natural grass has visible roots/soil. The distinction must remain clear at small card size without color, labels or tiny seams."
+    },
+    {
+      "id": "natural-flower",
+      "label": "Natural flower",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "One natural flower specimen on a neutral surface, matched composition/scale to its natural/artificial counterpart. Artificial objects visibly show manufactured plastic material/seams; natural objects have organic leaves/petals or roots/soil. Do not rely on a robot metaphor, labels, color alone or hidden production history. Needs visual distinction review."
+    },
+    {
+      "id": "natural-grass",
+      "label": "Natural grass",
+      "kind": "planned-image",
+      "source": {
+        "kind": "shared-concept",
+        "status": "artwork-needed"
+      },
+      "brief": "A patch of natural grass with organic roots and soil clearly visible; match artificial-grass framing/scale. The roots/soil versus the manufactured turf backing must remain clear at small card size without labels."
+    }
+  ],
+  "prompts": [
+    {
+      "id": "ja-short-wk1-ue-01",
+      "targetItemId": "ja-v-c0f58bfab324",
+      "variant": 1,
+      "sentence": {
+        "text": "猫は箱の上にいます。",
+        "reading": "ねこははこのうえにいます。",
+        "meaning": "The cat is on the box."
+      },
+      "answerSetId": "spatial",
+      "correctCardId": "box-below",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "上",
+        "reading": "うえ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "箱はどこですか。",
+        "reading": "はこはどこですか。",
+        "meaning": "Where is the box?"
+      },
+      "reviewNote": "Card IDs describe the box relative to the cat. The cat on the box means the box is below the cat.",
+      "cardIds": [
+        "box-above",
+        "box-below",
+        "box-left",
+        "box-right"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-ue-02",
+      "targetItemId": "ja-v-c0f58bfab324",
+      "variant": 2,
+      "sentence": {
+        "text": "箱は猫の上にあります。",
+        "reading": "はこはねこのうえにあります。",
+        "meaning": "The box is above the cat."
+      },
+      "answerSetId": "spatial",
+      "correctCardId": "box-above",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "上",
+        "reading": "うえ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "箱はどこですか。",
+        "reading": "はこはどこですか。",
+        "meaning": "Where is the box?"
+      },
+      "cardIds": [
+        "box-below",
+        "box-left",
+        "box-right",
+        "box-above"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-otona-01",
+      "targetItemId": "ja-v-2cc50c2d66a6",
+      "variant": 1,
+      "sentence": {
+        "text": "大人が二人います。",
+        "reading": "おとながふたりいます。",
+        "meaning": "There are two adults."
+      },
+      "answerSetId": "adults",
+      "correctCardId": "adults",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "大人",
+        "reading": "おとな"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "誰がいますか。",
+        "reading": "だれがいますか。",
+        "meaning": "Who is there?"
+      },
+      "cardIds": [
+        "adults",
+        "children",
+        "babies",
+        "cats"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-otona-02",
+      "targetItemId": "ja-v-2cc50c2d66a6",
+      "variant": 2,
+      "sentence": {
+        "text": "あそこに大人がいます。",
+        "reading": "あそこにおとながいます。",
+        "meaning": "There are adults over there."
+      },
+      "answerSetId": "adults",
+      "correctCardId": "adults",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "大人",
+        "reading": "おとな"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "誰がいますか。",
+        "reading": "だれがいますか。",
+        "meaning": "Who is there?"
+      },
+      "reviewNote": "The illustration depicts two adults; the sentence does not specify their number.",
+      "cardIds": [
+        "children",
+        "babies",
+        "cats",
+        "adults"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-hitori-01",
+      "targetItemId": "ja-v-7de8b40e4f57",
+      "variant": 1,
+      "sentence": {
+        "text": "人が一人います。",
+        "reading": "ひとがひとりいます。",
+        "meaning": "There is one person."
+      },
+      "answerSetId": "people-count",
+      "correctCardId": "people-1",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "一人",
+        "reading": "ひとり"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "people-3",
+        "people-4",
+        "people-1",
+        "adults"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-hitori-02",
+      "targetItemId": "ja-v-7de8b40e4f57",
+      "variant": 2,
+      "sentence": {
+        "text": "一人で行きます。",
+        "reading": "ひとりでいきます。",
+        "meaning": "I’m going alone."
+      },
+      "answerSetId": "people-count",
+      "correctCardId": "people-1",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "一人",
+        "reading": "ひとり"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "The card shows group size; do not introduce a destination or unstated intention.",
+      "cardIds": [
+        "people-4",
+        "people-1",
+        "adults",
+        "people-3"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-jinkou-artificial-01",
+      "targetItemId": "ja-v-3fef4445ce13",
+      "variant": 1,
+      "sentence": {
+        "text": "これは人工の花です。",
+        "reading": "これはじんこうのはなです。",
+        "meaning": "This is an artificial flower."
+      },
+      "answerSetId": "manufactured",
+      "correctCardId": "artificial-flower",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "人工",
+        "reading": "じんこう"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "Homophone of 人口. The manufactured/natural distinction must be visible; new shared artwork is needed.",
+      "cardIds": [
+        "artificial-flower",
+        "natural-flower",
+        "artificial-grass",
+        "natural-grass"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-jinkou-artificial-02",
+      "targetItemId": "ja-v-3fef4445ce13",
+      "variant": 2,
+      "sentence": {
+        "text": "これは人工芝です。",
+        "reading": "これはじんこうしばです。",
+        "meaning": "This is artificial grass."
+      },
+      "answerSetId": "manufactured",
+      "correctCardId": "artificial-grass",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "人工",
+        "reading": "じんこう"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "人工芝 is the natural everyday term for artificial turf. 芝（しば, lawn/turf）is supporting vocabulary. The manufactured backing/roll must be visible; color or tiny seams alone are insufficient.",
+      "cardIds": [
+        "natural-flower",
+        "artificial-grass",
+        "natural-grass",
+        "artificial-flower"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-shita-01",
+      "targetItemId": "ja-v-520308b3c3b4",
+      "variant": 1,
+      "sentence": {
+        "text": "猫は箱の下にいます。",
+        "reading": "ねこははこのしたにいます。",
+        "meaning": "The cat is under the box."
+      },
+      "answerSetId": "spatial",
+      "correctCardId": "box-above",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "下",
+        "reading": "した"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "箱はどこですか。",
+        "reading": "はこはどこですか。",
+        "meaning": "Where is the box?"
+      },
+      "cardIds": [
+        "box-left",
+        "box-right",
+        "box-above",
+        "box-below"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-shita-02",
+      "targetItemId": "ja-v-520308b3c3b4",
+      "variant": 2,
+      "sentence": {
+        "text": "箱は猫の下にあります。",
+        "reading": "はこはねこのしたにあります。",
+        "meaning": "The box is below the cat."
+      },
+      "answerSetId": "spatial",
+      "correctCardId": "box-below",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "下",
+        "reading": "した"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "箱はどこですか。",
+        "reading": "はこはどこですか。",
+        "meaning": "Where is the box?"
+      },
+      "cardIds": [
+        "box-right",
+        "box-above",
+        "box-below",
+        "box-left"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-ookii-01",
+      "targetItemId": "ja-v-f6377dcbb564",
+      "variant": 1,
+      "sentence": {
+        "text": "箱は大きいです。",
+        "reading": "はこはおおきいです。",
+        "meaning": "The box is large."
+      },
+      "answerSetId": "size",
+      "correctCardId": "large-box",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "大きい",
+        "reading": "おおきい"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "large-ball",
+        "small-ball",
+        "large-box",
+        "small-box"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-ookii-02",
+      "targetItemId": "ja-v-f6377dcbb564",
+      "variant": 2,
+      "sentence": {
+        "text": "ボールは大きいです。",
+        "reading": "ぼーるはおおきいです。",
+        "meaning": "The ball is large."
+      },
+      "answerSetId": "size",
+      "correctCardId": "large-ball",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "大きい",
+        "reading": "おおきい"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "small-ball",
+        "large-box",
+        "small-box",
+        "large-ball"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-hachi-01",
+      "targetItemId": "ja-v-f6ed7c17c0d5",
+      "variant": 1,
+      "sentence": {
+        "text": "番号は八です。",
+        "reading": "ばんごうははちです。",
+        "meaning": "The number is 8."
+      },
+      "answerSetId": "numbers-high",
+      "correctCardId": "number-8",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "八",
+        "reading": "はち"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "The shared numbered-ball cards represent written numerals, not quantities of fruit.",
+      "cardIds": [
+        "number-7",
+        "number-8",
+        "number-9",
+        "number-10"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-hachi-02",
+      "targetItemId": "ja-v-f6ed7c17c0d5",
+      "variant": 2,
+      "sentence": {
+        "text": "八のボールです。",
+        "reading": "はちのぼーるです。",
+        "meaning": "It’s the number-8 ball."
+      },
+      "answerSetId": "numbers-high",
+      "correctCardId": "number-8",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "八",
+        "reading": "はち"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "number-8",
+        "number-9",
+        "number-10",
+        "number-7"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-yattsu-01",
+      "targetItemId": "ja-v-6c9351ae67e6",
+      "variant": 1,
+      "sentence": {
+        "text": "みかんが八つあります。",
+        "reading": "みかんがやっつあります。",
+        "meaning": "There are 8 mandarin oranges."
+      },
+      "answerSetId": "oranges",
+      "correctCardId": "oranges-8",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "八つ",
+        "reading": "やっつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "oranges-8",
+        "oranges-9",
+        "oranges-6",
+        "oranges-7"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-yattsu-02",
+      "targetItemId": "ja-v-6c9351ae67e6",
+      "variant": 2,
+      "sentence": {
+        "text": "卵が八つあります。",
+        "reading": "たまごがやっつあります。",
+        "meaning": "There are 8 eggs."
+      },
+      "answerSetId": "eggs",
+      "correctCardId": "eggs-8",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "八つ",
+        "reading": "やっつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "eggs-9",
+        "eggs-6",
+        "eggs-7",
+        "eggs-8"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-iriguchi-01",
+      "targetItemId": "ja-v-20cbd1c15a35",
+      "variant": 1,
+      "sentence": {
+        "text": "ここが入り口です。",
+        "reading": "ここがいりぐちです。",
+        "meaning": "This is the entrance."
+      },
+      "answerSetId": "doorways",
+      "correctCardId": "entrance",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "入り口",
+        "reading": "いりぐち"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "Reuse the doorway with an inward arrow. Do not offer a second entering picture as a competing answer.",
+      "cardIds": [
+        "lift-box",
+        "lower-box",
+        "entrance",
+        "exit"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-iriguchi-02",
+      "targetItemId": "ja-v-20cbd1c15a35",
+      "variant": 2,
+      "sentence": {
+        "text": "入り口はあそこです。",
+        "reading": "いりぐちはあそこです。",
+        "meaning": "The entrance is over there."
+      },
+      "answerSetId": "doorways",
+      "correctCardId": "entrance",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "入り口",
+        "reading": "いりぐち"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "lower-box",
+        "entrance",
+        "exit",
+        "lift-box"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-taishita-01",
+      "targetItemId": "ja-v-1d446778d33c",
+      "variant": 1,
+      "sentence": {
+        "text": "大したけがではありません。",
+        "reading": "たいしたけがではありません。",
+        "meaning": "It’s not a serious injury."
+      },
+      "answerSetId": "injuries",
+      "correctCardId": "scratch",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "大した",
+        "reading": "たいした"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "どんなけがですか。",
+        "reading": "どんなけがですか。",
+        "meaning": "What kind of injury is it?"
+      },
+      "reviewNote": "Keep the natural negative use. This remains harder than the concrete noun/count prompts.",
+      "cardIds": [
+        "leg",
+        "head",
+        "scratch",
+        "arm"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-taishita-02",
+      "targetItemId": "ja-v-1d446778d33c",
+      "variant": 2,
+      "sentence": {
+        "text": "大したけがじゃないです。",
+        "reading": "たいしたけがじゃないです。",
+        "meaning": "It’s not a serious injury."
+      },
+      "answerSetId": "injuries",
+      "correctCardId": "scratch",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "大した",
+        "reading": "たいした"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "A shorter spoken negative using じゃないです. Reuse the minor-injury card; no extra inference question is needed.",
+      "cardIds": [
+        "head",
+        "scratch",
+        "arm",
+        "leg"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-yama-01",
+      "targetItemId": "ja-v-ddd9dca106e2",
+      "variant": 1,
+      "sentence": {
+        "text": "家は山にあります。",
+        "reading": "いえはやまにあります。",
+        "meaning": "The house is on a mountain."
+      },
+      "answerSetId": "houses",
+      "correctCardId": "house-mountain",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "山",
+        "reading": "やま"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "家はどこですか。",
+        "reading": "いえはどこですか。",
+        "meaning": "Where is the house?"
+      },
+      "cardIds": [
+        "house-mountain",
+        "house-river",
+        "house-sea",
+        "house-city"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-yama-02",
+      "targetItemId": "ja-v-ddd9dca106e2",
+      "variant": 2,
+      "sentence": {
+        "text": "山に行きます。",
+        "reading": "やまにいきます。",
+        "meaning": "I’m going to the mountain."
+      },
+      "answerSetId": "places",
+      "correctCardId": "mountain",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "山",
+        "reading": "やま"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "どこに行きますか。",
+        "reading": "どこにいきますか。",
+        "meaning": "Where are you going?"
+      },
+      "cardIds": [
+        "river",
+        "park",
+        "sea",
+        "mountain"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-kuchi-01",
+      "targetItemId": "ja-v-9e64feeea5ea",
+      "variant": 1,
+      "sentence": {
+        "text": "口はここです。",
+        "reading": "くちはここです。",
+        "meaning": "The mouth is here."
+      },
+      "answerSetId": "body",
+      "correctCardId": "mouth",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "口",
+        "reading": "くち"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "mouth",
+        "hand",
+        "ear",
+        "foot"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-kuchi-02",
+      "targetItemId": "ja-v-9e64feeea5ea",
+      "variant": 2,
+      "sentence": {
+        "text": "口を見てください。",
+        "reading": "くちをみてください。",
+        "meaning": "Please look at the mouth."
+      },
+      "answerSetId": "body",
+      "correctCardId": "mouth",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "口",
+        "reading": "くち"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "hand",
+        "ear",
+        "foot",
+        "mouth"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-fujisan-01",
+      "targetItemId": "ja-v-0181fab128a1",
+      "variant": 1,
+      "sentence": {
+        "text": "あれはふじ山です。",
+        "reading": "あれはふじさんです。",
+        "meaning": "That is Mount Fuji."
+      },
+      "answerSetId": "landmarks",
+      "correctCardId": "fuji",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "ふじ山",
+        "reading": "ふじさん"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "Requires a recognizable Fuji illustration; a generic mountain is not sufficient. Previously word-first eligibility is unchanged.",
+      "cardIds": [
+        "park",
+        "sea",
+        "fuji",
+        "river"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-fujisan-02",
+      "targetItemId": "ja-v-0181fab128a1",
+      "variant": 2,
+      "sentence": {
+        "text": "ふじ山に行きます。",
+        "reading": "ふじさんにいきます。",
+        "meaning": "I’m going to Mount Fuji."
+      },
+      "answerSetId": "landmarks",
+      "correctCardId": "fuji",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "ふじ山",
+        "reading": "ふじさん"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "どこに行きますか。",
+        "reading": "どこにいきますか。",
+        "meaning": "Where are you going?"
+      },
+      "cardIds": [
+        "sea",
+        "fuji",
+        "river",
+        "park"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-kyuu-01",
+      "targetItemId": "ja-v-d33ed6be2a48",
+      "variant": 1,
+      "sentence": {
+        "text": "番号は九です。",
+        "reading": "ばんごうはきゅうです。",
+        "meaning": "The number is 9."
+      },
+      "answerSetId": "numbers-high",
+      "correctCardId": "number-9",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "九",
+        "reading": "きゅう"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "The shared numbered-ball cards represent written numerals, not quantities of fruit.",
+      "cardIds": [
+        "number-9",
+        "number-10",
+        "number-7",
+        "number-8"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-kyuu-02",
+      "targetItemId": "ja-v-d33ed6be2a48",
+      "variant": 2,
+      "sentence": {
+        "text": "九のボールです。",
+        "reading": "きゅうのぼーるです。",
+        "meaning": "It’s the number-9 ball."
+      },
+      "answerSetId": "numbers-high",
+      "correctCardId": "number-9",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "九",
+        "reading": "きゅう"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "number-10",
+        "number-7",
+        "number-8",
+        "number-9"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-kokonotsu-01",
+      "targetItemId": "ja-v-0d0163a40587",
+      "variant": 1,
+      "sentence": {
+        "text": "卵が九つあります。",
+        "reading": "たまごがここのつあります。",
+        "meaning": "There are 9 eggs."
+      },
+      "answerSetId": "eggs",
+      "correctCardId": "eggs-9",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "九つ",
+        "reading": "ここのつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "eggs-6",
+        "eggs-7",
+        "eggs-8",
+        "eggs-9"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-kokonotsu-02",
+      "targetItemId": "ja-v-0d0163a40587",
+      "variant": 2,
+      "sentence": {
+        "text": "みかんが九つあります。",
+        "reading": "みかんがここのつあります。",
+        "meaning": "There are 9 mandarin oranges."
+      },
+      "answerSetId": "oranges",
+      "correctCardId": "oranges-9",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "九つ",
+        "reading": "ここのつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "oranges-7",
+        "oranges-8",
+        "oranges-9",
+        "oranges-6"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-ichi-01",
+      "targetItemId": "ja-v-5d8047464c5d",
+      "variant": 1,
+      "sentence": {
+        "text": "番号は一です。",
+        "reading": "ばんごうはいちです。",
+        "meaning": "The number is 1."
+      },
+      "answerSetId": "numbers-low",
+      "correctCardId": "number-1",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "一",
+        "reading": "いち"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "The shared numbered-ball cards represent written numerals, not quantities of fruit.",
+      "cardIds": [
+        "number-1",
+        "number-2",
+        "number-3",
+        "number-7"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-ichi-02",
+      "targetItemId": "ja-v-5d8047464c5d",
+      "variant": 2,
+      "sentence": {
+        "text": "一のボールです。",
+        "reading": "いちのぼーるです。",
+        "meaning": "It’s the number-1 ball."
+      },
+      "answerSetId": "numbers-low",
+      "correctCardId": "number-1",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "一",
+        "reading": "いち"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "number-2",
+        "number-3",
+        "number-7",
+        "number-1"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-hitotsu-01",
+      "targetItemId": "ja-v-277587e6fa07",
+      "variant": 1,
+      "sentence": {
+        "text": "皿にりんごが一つあります。",
+        "reading": "さらにりんごがひとつあります。",
+        "meaning": "There is one apple on the plate."
+      },
+      "answerSetId": "apples",
+      "correctCardId": "apples-1",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "一つ",
+        "reading": "ひとつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "apples-3",
+        "apples-4",
+        "apples-1",
+        "apples-2"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-hitotsu-02",
+      "targetItemId": "ja-v-277587e6fa07",
+      "variant": 2,
+      "sentence": {
+        "text": "クッキーが一つあります。",
+        "reading": "くっきーがひとつあります。",
+        "meaning": "There is one cookie."
+      },
+      "answerSetId": "cookies",
+      "correctCardId": "cookies-1",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "一つ",
+        "reading": "ひとつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "cookies-4",
+        "cookies-1",
+        "cookies-2",
+        "cookies-3"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-hito-01",
+      "targetItemId": "ja-v-ad7167347a2a",
+      "variant": 1,
+      "sentence": {
+        "text": "ここに人がいます。",
+        "reading": "ここにひとがいます。",
+        "meaning": "There is a person here."
+      },
+      "answerSetId": "person",
+      "correctCardId": "people-1",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "人",
+        "reading": "ひと"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "Other human pictures are deliberately absent from this set; count and gender are unspecified.",
+      "cardIds": [
+        "people-1",
+        "cats",
+        "mouth",
+        "hand"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-hito-02",
+      "targetItemId": "ja-v-ad7167347a2a",
+      "variant": 2,
+      "sentence": {
+        "text": "家に人がいます。",
+        "reading": "いえにひとがいます。",
+        "meaning": "There is a person in the house."
+      },
+      "answerSetId": "person",
+      "correctCardId": "people-1",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "人",
+        "reading": "ひと"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "cats",
+        "mouth",
+        "hand",
+        "people-1"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-kudasai-01",
+      "targetItemId": "ja-v-fae75d2d18b2",
+      "variant": 1,
+      "sentence": {
+        "text": "りんごを一つ下さい。",
+        "reading": "りんごをひとつください。",
+        "meaning": "Please give me one apple."
+      },
+      "answerSetId": "apples",
+      "correctCardId": "apples-1",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "下さい",
+        "reading": "ください"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "Direct request; reuse quantity cards. No extra handing-over illustration or inference question is needed.",
+      "cardIds": [
+        "apples-3",
+        "apples-4",
+        "apples-1",
+        "apples-2"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-kudasai-02",
+      "targetItemId": "ja-v-fae75d2d18b2",
+      "variant": 2,
+      "sentence": {
+        "text": "りんごを二つ下さい。",
+        "reading": "りんごをふたつください。",
+        "meaning": "Please give me two apples."
+      },
+      "answerSetId": "apples",
+      "correctCardId": "apples-2",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "下さい",
+        "reading": "ください"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "apples-4",
+        "apples-1",
+        "apples-2",
+        "apples-3"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-jinkou-population-01",
+      "targetItemId": "ja-v-2ef4da30cf39",
+      "variant": 1,
+      "sentence": {
+        "text": "島の人口は三人です。",
+        "reading": "しまのじんこうはさんにんです。",
+        "meaning": "The island’s population is three people."
+      },
+      "answerSetId": "people-count",
+      "correctCardId": "people-3",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "人口",
+        "reading": "じんこう"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "A tiny island keeps the population/count plausible and lets us reuse the people cards. Homophone of 人工; context supplies the meaning.",
+      "cardIds": [
+        "people-1",
+        "adults",
+        "people-3",
+        "people-4"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-jinkou-population-02",
+      "targetItemId": "ja-v-2ef4da30cf39",
+      "variant": 2,
+      "sentence": {
+        "text": "島の人口は二人です。",
+        "reading": "しまのじんこうはふたりです。",
+        "meaning": "The island’s population is two people."
+      },
+      "answerSetId": "people-count",
+      "correctCardId": "adults",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "人口",
+        "reading": "じんこう"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "adults",
+        "people-3",
+        "people-4",
+        "people-1"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-chikara-01",
+      "targetItemId": "ja-v-33c00f4a1a8b",
+      "variant": 1,
+      "sentence": {
+        "text": "強い力で押します。",
+        "reading": "つよいちからでおします。",
+        "meaning": "I push with strong force."
+      },
+      "answerSetId": "effort",
+      "correctCardId": "push-hard",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "力",
+        "reading": "ちから"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "Physical force and the explicit pushing action distinguish this from pulling or carrying.",
+      "cardIds": [
+        "pull",
+        "carry",
+        "push-hard",
+        "push-gently"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-chikara-02",
+      "targetItemId": "ja-v-33c00f4a1a8b",
+      "variant": 2,
+      "sentence": {
+        "text": "弱い力で押します。",
+        "reading": "よわいちからでおします。",
+        "meaning": "I push gently, with little force."
+      },
+      "answerSetId": "effort",
+      "correctCardId": "push-gently",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "力",
+        "reading": "ちから"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "carry",
+        "push-hard",
+        "push-gently",
+        "pull"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-kawa-01",
+      "targetItemId": "ja-v-46f8fe65f218",
+      "variant": 1,
+      "sentence": {
+        "text": "川に行きます。",
+        "reading": "かわにいきます。",
+        "meaning": "I’m going to the river."
+      },
+      "answerSetId": "places",
+      "correctCardId": "river",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "川",
+        "reading": "かわ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "どこに行きますか。",
+        "reading": "どこにいきますか。",
+        "meaning": "Where are you going?"
+      },
+      "cardIds": [
+        "park",
+        "sea",
+        "mountain",
+        "river"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-kawa-02",
+      "targetItemId": "ja-v-46f8fe65f218",
+      "variant": 2,
+      "sentence": {
+        "text": "家は川のそばです。",
+        "reading": "いえはかわのそばです。",
+        "meaning": "The house is beside the river."
+      },
+      "answerSetId": "houses",
+      "correctCardId": "house-river",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "川",
+        "reading": "かわ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "家はどこですか。",
+        "reading": "いえはどこですか。",
+        "meaning": "Where is the house?"
+      },
+      "cardIds": [
+        "house-city",
+        "house-mountain",
+        "house-river",
+        "house-sea"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-nana-01",
+      "targetItemId": "ja-v-eda9a40b0c91",
+      "variant": 1,
+      "sentence": {
+        "text": "番号は七です。",
+        "reading": "ばんごうはななです。",
+        "meaning": "The number is 7."
+      },
+      "answerSetId": "numbers-high",
+      "correctCardId": "number-7",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "七",
+        "reading": "なな"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "The shared numbered-ball cards represent written numerals, not quantities of fruit.",
+      "cardIds": [
+        "number-9",
+        "number-10",
+        "number-7",
+        "number-8"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-nana-02",
+      "targetItemId": "ja-v-eda9a40b0c91",
+      "variant": 2,
+      "sentence": {
+        "text": "七のボールです。",
+        "reading": "ななのぼーるです。",
+        "meaning": "It’s the number-7 ball."
+      },
+      "answerSetId": "numbers-high",
+      "correctCardId": "number-7",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "七",
+        "reading": "なな"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "number-10",
+        "number-7",
+        "number-8",
+        "number-9"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-nanatsu-01",
+      "targetItemId": "ja-v-f6bc974a7405",
+      "variant": 1,
+      "sentence": {
+        "text": "みかんが七つあります。",
+        "reading": "みかんがななつあります。",
+        "meaning": "There are 7 mandarin oranges."
+      },
+      "answerSetId": "oranges",
+      "correctCardId": "oranges-7",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "七つ",
+        "reading": "ななつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "oranges-6",
+        "oranges-7",
+        "oranges-8",
+        "oranges-9"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-nanatsu-02",
+      "targetItemId": "ja-v-f6bc974a7405",
+      "variant": 2,
+      "sentence": {
+        "text": "卵が七つあります。",
+        "reading": "たまごがななつあります。",
+        "meaning": "There are 7 eggs."
+      },
+      "answerSetId": "eggs",
+      "correctCardId": "eggs-7",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "七つ",
+        "reading": "ななつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "eggs-7",
+        "eggs-8",
+        "eggs-9",
+        "eggs-6"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-ookisa-01",
+      "targetItemId": "ja-v-26d0ad7af566",
+      "variant": 1,
+      "sentence": {
+        "text": "箱は大きいです。",
+        "reading": "はこはおおきいです。",
+        "meaning": "The box is large."
+      },
+      "answerSetId": "size",
+      "correctCardId": "large-box",
+      "targetOccurrence": {
+        "segment": "question",
+        "surface": "大きさ",
+        "reading": "おおきさ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "大きさはどうですか。",
+        "reading": "おおきさはどうですか。",
+        "meaning": "What is its size like?"
+      },
+      "reviewNote": "The target 大きさ is heard in the short question. Reuse the same large/small object cards as 大きい; do not add dimension symbolism.",
+      "cardIds": [
+        "large-box",
+        "small-box",
+        "large-ball",
+        "small-ball"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-ookisa-02",
+      "targetItemId": "ja-v-26d0ad7af566",
+      "variant": 2,
+      "sentence": {
+        "text": "ボールは小さいです。",
+        "reading": "ぼーるはちいさいです。",
+        "meaning": "The ball is small."
+      },
+      "answerSetId": "size",
+      "correctCardId": "small-ball",
+      "targetOccurrence": {
+        "segment": "question",
+        "surface": "大きさ",
+        "reading": "おおきさ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "大きさはどうですか。",
+        "reading": "おおきさはどうですか。",
+        "meaning": "What is its size like?"
+      },
+      "cardIds": [
+        "small-box",
+        "large-ball",
+        "small-ball",
+        "large-box"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-juu-01",
+      "targetItemId": "ja-v-877b9ba07a47",
+      "variant": 1,
+      "sentence": {
+        "text": "番号は十です。",
+        "reading": "ばんごうはじゅうです。",
+        "meaning": "The number is 10."
+      },
+      "answerSetId": "numbers-high",
+      "correctCardId": "number-10",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "十",
+        "reading": "じゅう"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "The shared numbered-ball cards represent written numerals, not quantities of fruit.",
+      "cardIds": [
+        "number-7",
+        "number-8",
+        "number-9",
+        "number-10"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-juu-02",
+      "targetItemId": "ja-v-877b9ba07a47",
+      "variant": 2,
+      "sentence": {
+        "text": "十のボールです。",
+        "reading": "じゅうのぼーるです。",
+        "meaning": "It’s the number-10 ball."
+      },
+      "answerSetId": "numbers-high",
+      "correctCardId": "number-10",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "十",
+        "reading": "じゅう"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "number-8",
+        "number-9",
+        "number-10",
+        "number-7"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-san-01",
+      "targetItemId": "ja-v-1bedf722c04a",
+      "variant": 1,
+      "sentence": {
+        "text": "番号は三です。",
+        "reading": "ばんごうはさんです。",
+        "meaning": "The number is 3."
+      },
+      "answerSetId": "numbers-low",
+      "correctCardId": "number-3",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "三",
+        "reading": "さん"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "The shared numbered-ball cards represent written numerals, not quantities of fruit.",
+      "cardIds": [
+        "number-1",
+        "number-2",
+        "number-3",
+        "number-7"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-san-02",
+      "targetItemId": "ja-v-1bedf722c04a",
+      "variant": 2,
+      "sentence": {
+        "text": "三のボールです。",
+        "reading": "さんのぼーるです。",
+        "meaning": "It’s the number-3 ball."
+      },
+      "answerSetId": "numbers-low",
+      "correctCardId": "number-3",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "三",
+        "reading": "さん"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "number-2",
+        "number-3",
+        "number-7",
+        "number-1"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-sannin-01",
+      "targetItemId": "ja-v-2a318f5ee1c8",
+      "variant": 1,
+      "sentence": {
+        "text": "人が三人います。",
+        "reading": "ひとがさんにんいます。",
+        "meaning": "There are 3 people."
+      },
+      "answerSetId": "people-count",
+      "correctCardId": "people-3",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "三人",
+        "reading": "さんにん"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "people-3",
+        "people-4",
+        "people-1",
+        "adults"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-sannin-02",
+      "targetItemId": "ja-v-2a318f5ee1c8",
+      "variant": 2,
+      "sentence": {
+        "text": "三人で行きます。",
+        "reading": "さんにんでいきます。",
+        "meaning": "We’re going as a group of 3."
+      },
+      "answerSetId": "people-count",
+      "correctCardId": "people-3",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "三人",
+        "reading": "さんにん"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "The card shows group size; do not introduce a destination or unstated intention.",
+      "cardIds": [
+        "people-4",
+        "people-1",
+        "adults",
+        "people-3"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-mittsu-01",
+      "targetItemId": "ja-v-8b887bc8af0c",
+      "variant": 1,
+      "sentence": {
+        "text": "皿にりんごが三つあります。",
+        "reading": "さらにりんごがみっつあります。",
+        "meaning": "There are three apples on the plate."
+      },
+      "answerSetId": "apples",
+      "correctCardId": "apples-3",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "三つ",
+        "reading": "みっつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "apples-3",
+        "apples-4",
+        "apples-1",
+        "apples-2"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-mittsu-02",
+      "targetItemId": "ja-v-8b887bc8af0c",
+      "variant": 2,
+      "sentence": {
+        "text": "クッキーが三つあります。",
+        "reading": "くっきーがみっつあります。",
+        "meaning": "There are three cookies."
+      },
+      "answerSetId": "cookies",
+      "correctCardId": "cookies-3",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "三つ",
+        "reading": "みっつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "cookies-4",
+        "cookies-1",
+        "cookies-2",
+        "cookies-3"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-hairu-01",
+      "targetItemId": "ja-v-82a114897d9c",
+      "variant": 1,
+      "sentence": {
+        "text": "ドアから入ります。",
+        "reading": "どあからはいります。",
+        "meaning": "I go in through the door."
+      },
+      "answerSetId": "doorways",
+      "correctCardId": "entrance",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "入ります",
+        "reading": "はいります"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "The inward doorway arrow represents entering; no actor identity is specified.",
+      "cardIds": [
+        "entrance",
+        "exit",
+        "lift-box",
+        "lower-box"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-hairu-02",
+      "targetItemId": "ja-v-82a114897d9c",
+      "variant": 2,
+      "sentence": {
+        "text": "家に入ります。",
+        "reading": "いえにはいります。",
+        "meaning": "I go into the house."
+      },
+      "answerSetId": "doorways",
+      "correctCardId": "entrance",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "入ります",
+        "reading": "はいります"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "exit",
+        "lift-box",
+        "lower-box",
+        "entrance"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-ageru-01",
+      "targetItemId": "ja-v-6d1d47c9258e",
+      "variant": 1,
+      "sentence": {
+        "text": "箱を上げます。",
+        "reading": "はこをあげます。",
+        "meaning": "I lift the box."
+      },
+      "answerSetId": "movement",
+      "correctCardId": "lift-box",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "上げます",
+        "reading": "あげます"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "push-hard",
+        "pull",
+        "lift-box",
+        "lower-box"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-ageru-02",
+      "targetItemId": "ja-v-6d1d47c9258e",
+      "variant": 2,
+      "sentence": {
+        "text": "箱を上げてください。",
+        "reading": "はこをあげてください。",
+        "meaning": "Please lift the box."
+      },
+      "answerSetId": "movement",
+      "correctCardId": "lift-box",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "上げて",
+        "reading": "あげて"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "pull",
+        "lift-box",
+        "lower-box",
+        "push-hard"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-sageru-01",
+      "targetItemId": "ja-v-06a4c07236b5",
+      "variant": 1,
+      "sentence": {
+        "text": "箱を下げます。",
+        "reading": "はこをさげます。",
+        "meaning": "I lower the box."
+      },
+      "answerSetId": "movement",
+      "correctCardId": "lower-box",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "下げます",
+        "reading": "さげます"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "lift-box",
+        "lower-box",
+        "push-hard",
+        "pull"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-sageru-02",
+      "targetItemId": "ja-v-06a4c07236b5",
+      "variant": 2,
+      "sentence": {
+        "text": "箱を下げてください。",
+        "reading": "はこをさげてください。",
+        "meaning": "Please lower the box."
+      },
+      "answerSetId": "movement",
+      "correctCardId": "lower-box",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "下げて",
+        "reading": "さげて"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "lower-box",
+        "push-hard",
+        "pull",
+        "lift-box"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-ni-01",
+      "targetItemId": "ja-v-7fc81b0ddd17",
+      "variant": 1,
+      "sentence": {
+        "text": "番号は二です。",
+        "reading": "ばんごうはにです。",
+        "meaning": "The number is 2."
+      },
+      "answerSetId": "numbers-low",
+      "correctCardId": "number-2",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "二",
+        "reading": "に"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "The shared numbered-ball cards represent written numerals, not quantities of fruit.",
+      "cardIds": [
+        "number-3",
+        "number-7",
+        "number-1",
+        "number-2"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-ni-02",
+      "targetItemId": "ja-v-7fc81b0ddd17",
+      "variant": 2,
+      "sentence": {
+        "text": "二のボールです。",
+        "reading": "にのぼーるです。",
+        "meaning": "It’s the number-2 ball."
+      },
+      "answerSetId": "numbers-low",
+      "correctCardId": "number-2",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "二",
+        "reading": "に"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "number-7",
+        "number-1",
+        "number-2",
+        "number-3"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-futari-01",
+      "targetItemId": "ja-v-4fa716f651b2",
+      "variant": 1,
+      "sentence": {
+        "text": "人が二人います。",
+        "reading": "ひとがふたりいます。",
+        "meaning": "There are 2 people."
+      },
+      "answerSetId": "people-count",
+      "correctCardId": "adults",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "二人",
+        "reading": "ふたり"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "people-1",
+        "adults",
+        "people-3",
+        "people-4"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-futari-02",
+      "targetItemId": "ja-v-4fa716f651b2",
+      "variant": 2,
+      "sentence": {
+        "text": "二人で行きます。",
+        "reading": "ふたりでいきます。",
+        "meaning": "We’re going as a group of 2."
+      },
+      "answerSetId": "people-count",
+      "correctCardId": "adults",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "二人",
+        "reading": "ふたり"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "The card shows group size; do not introduce a destination or unstated intention.",
+      "cardIds": [
+        "adults",
+        "people-3",
+        "people-4",
+        "people-1"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-futatsu-01",
+      "targetItemId": "ja-v-bb85f028d944",
+      "variant": 1,
+      "sentence": {
+        "text": "クッキーが二つあります。",
+        "reading": "くっきーがふたつあります。",
+        "meaning": "There are two cookies."
+      },
+      "answerSetId": "cookies",
+      "correctCardId": "cookies-2",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "二つ",
+        "reading": "ふたつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "cookies-1",
+        "cookies-2",
+        "cookies-3",
+        "cookies-4"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-futatsu-02",
+      "targetItemId": "ja-v-bb85f028d944",
+      "variant": 2,
+      "sentence": {
+        "text": "皿にりんごが二つあります。",
+        "reading": "さらにりんごがふたつあります。",
+        "meaning": "There are two apples on the plate."
+      },
+      "answerSetId": "apples",
+      "correctCardId": "apples-2",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "二つ",
+        "reading": "ふたつ"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "apples-2",
+        "apples-3",
+        "apples-4",
+        "apples-1"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-chikaraippai-01",
+      "targetItemId": "ja-v-c70f2920b2de",
+      "variant": 1,
+      "sentence": {
+        "text": "力いっぱい押してください。",
+        "reading": "ちからいっぱいおしてください。",
+        "meaning": "Please push with all your strength."
+      },
+      "answerSetId": "effort",
+      "correctCardId": "push-hard",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "力いっぱい",
+        "reading": "ちからいっぱい"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "question": {
+        "text": "どう押しますか。",
+        "reading": "どうおしますか。",
+        "meaning": "How should you push?"
+      },
+      "cardIds": [
+        "pull",
+        "carry",
+        "push-hard",
+        "push-gently"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-chikaraippai-02",
+      "targetItemId": "ja-v-c70f2920b2de",
+      "variant": 2,
+      "sentence": {
+        "text": "力いっぱい箱を押します。",
+        "reading": "ちからいっぱいはこをおします。",
+        "meaning": "I push the box with all my strength."
+      },
+      "answerSetId": "effort",
+      "correctCardId": "push-hard",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "力いっぱい",
+        "reading": "ちからいっぱい"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "carry",
+        "push-hard",
+        "push-gently",
+        "pull"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-onna-01",
+      "targetItemId": "ja-v-4d9423288cb2",
+      "variant": 1,
+      "sentence": {
+        "text": "女の人がいます。",
+        "reading": "おんなのひとがいます。",
+        "meaning": "There is a woman."
+      },
+      "answerSetId": "woman",
+      "correctCardId": "woman",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "女",
+        "reading": "おんな"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "reviewNote": "女 is used in the common beginner phrase 女の人. These are designated characters; clothing/hair do not define gender.",
+      "cardIds": [
+        "woman",
+        "man",
+        "cats",
+        "babies"
+      ]
+    },
+    {
+      "id": "ja-short-wk1-onna-02",
+      "targetItemId": "ja-v-4d9423288cb2",
+      "variant": 2,
+      "sentence": {
+        "text": "あそこに女の人がいます。",
+        "reading": "あそこにおんなのひとがいます。",
+        "meaning": "There is a woman over there."
+      },
+      "answerSetId": "woman",
+      "correctCardId": "woman",
+      "targetOccurrence": {
+        "segment": "sentence",
+        "surface": "女",
+        "reading": "おんな"
+      },
+      "review": {
+        "text": "pending",
+        "audio": "not-generated",
+        "artwork": "mixed-existing-and-planned"
+      },
+      "cardIds": [
+        "man",
+        "cats",
+        "babies",
+        "woman"
+      ]
+    }
+  ],
+  "grammarNotes": [
+    "Polite noun/adjective sentences with です.",
+    "Existence/location with に・上・下 and あります/います.",
+    "Simple movement/action with に・から・を and ます.",
+    "Familiar requests with てください and quantity + 下さい.",
+    "The two negative 大した phrases remain explicit review points.",
+    "大きさ appears in its short question; other targets occur in the sentence."
+  ],
+  "supportingVocabulary": [
+    [
+      "皿",
+      "さら",
+      "plate"
+    ],
+    [
+      "りんご",
+      "りんご",
+      "apple"
+    ],
+    [
+      "クッキー",
+      "くっきー",
+      "cookie"
+    ],
+    [
+      "みかん",
+      "みかん",
+      "mandarin orange"
+    ],
+    [
+      "卵",
+      "たまご",
+      "egg"
+    ],
+    [
+      "猫",
+      "ねこ",
+      "cat"
+    ],
+    [
+      "箱",
+      "はこ",
+      "box"
+    ],
+    [
+      "家",
+      "いえ",
+      "house"
+    ],
+    [
+      "花",
+      "はな",
+      "flower"
+    ],
+    [
+      "草",
+      "くさ",
+      "grass"
+    ],
+    [
+      "ボール",
+      "ぼーる",
+      "ball"
+    ],
+    [
+      "番号",
+      "ばんごう",
+      "number"
+    ],
+    [
+      "ドア",
+      "どあ",
+      "door"
+    ],
+    [
+      "けが",
+      "けが",
+      "injury"
+    ],
+    [
+      "島",
+      "しま",
+      "island"
+    ],
+    [
+      "強い",
+      "つよい",
+      "strong"
+    ],
+    [
+      "弱い",
+      "よわい",
+      "weak"
+    ],
+    [
+      "押す",
+      "おす",
+      "push"
+    ],
+    [
+      "行く",
+      "いく",
+      "go"
+    ],
+    [
+      "見る",
+      "みる",
+      "look"
+    ],
+    [
+      "同じ",
+      "おなじ",
+      "same"
+    ],
+    [
+      "小さい",
+      "ちいさい",
+      "small"
+    ],
+    [
+      "そば",
+      "そば",
+      "beside"
+    ],
+    [
+      "ここ",
+      "ここ",
+      "here"
+    ],
+    [
+      "あそこ",
+      "あそこ",
+      "over there"
+    ],
+    [
+      "あれ",
+      "あれ",
+      "that over there"
+    ],
+    [
+      "どこ",
+      "どこ",
+      "where"
+    ],
+    [
+      "誰",
+      "だれ",
+      "who"
+    ],
+    [
+      "どんな",
+      "どんな",
+      "what kind"
+    ],
+    [
+      "どう",
+      "どう",
+      "how"
+    ],
+    [
+      "芝",
+      "しば",
+      "lawn / turf"
+    ]
+  ]
+}
