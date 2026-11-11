@@ -1,4 +1,5 @@
-import { test as base, type BrowserContext } from '@playwright/test';
+import { test as base } from '@playwright/test';
+import { silenceMedia } from './quiet-audio';
 
 const audioMode = process.env.E2E_AUDIO;
 if (audioMode && audioMode !== 'quiet' && audioMode !== 'audible') {
@@ -15,15 +16,6 @@ export const test = base.extend<{ quietAudio: boolean; silenceAudio: void }>({
 });
 
 // Also use this for extra contexts created explicitly by multi-device journeys.
-export async function silenceMedia(context: BrowserContext) {
-  await context.addInitScript(() => {
-    const play = HTMLMediaElement.prototype.play;
-    HTMLMediaElement.prototype.play = function () {
-      this.muted = true;
-      // Keep the native promise, network, decoder, events, and playback clock.
-      return play.call(this);
-    };
-  });
-}
+export { silenceMedia } from './quiet-audio';
 
 export { expect, type Page, type BrowserContext } from '@playwright/test';

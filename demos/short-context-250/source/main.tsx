@@ -57,6 +57,7 @@ function Demo() {
         <p className="block-note">Answers stay in this demo. New artwork is awaiting your review.</p>
         <a className="text-button" href="/artwork.html">Review artwork and source records</a>
         <a className="text-button" href="/audio-provenance-v3.json">Audio source records</a>
+        <a className="text-button" href="/drafts.html">Review all 74 level 1 drafts</a>
       </section>}
     </main>
     <footer><span>Short context demo</span><a href="https://github.com/ajhconway/kikimashta/pull/251">Source</a></footer>

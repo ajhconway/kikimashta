@@ -2,6 +2,8 @@
 
 ## Short contextual review demo (#250)
 
+The owner liked the short examples and requested frequent answer-card reuse and two total prompts per level-1 word in #253. The new separate `content/contextual/short-level-1/bank.json` covers all 37 source-level words with 74 prompts and 69 shared card concepts across 296 answer slots. Fifty-five cards cross word boundaries; 56 existing image sources are reused and thirteen missing shared pictures remain explicit concepts. The full text/card review is linked from the existing private demo. Keep this drafting scope separate from fresh media generation, accepted practice and progress; exact text approval is still required before new speech.
+
 The owner requested shorter level-1 prompts and a ten-word review demo. PR #251 uses the actual app components, protocol-generated answer pictures and four sentence-only counting prompts. The latest request authorizes audio generation for the current ten drafts: Otani and Morioki through the shared resumable ElevenLabs contextual pipeline, 32 clips / 310 input characters, standard constant-gain processing and preserved private originals. Keep the demo isolated from ordinary practice and saved progress; owner listening/artwork and real-iPhone acceptance remain separate. See `demos/short-context-250/README.md` for exact approval, generation, processing and verification. The stale-worktree documentation discovery proposal is tracked independently in #252.
 
 ## Scene and contrast artwork review (#233)

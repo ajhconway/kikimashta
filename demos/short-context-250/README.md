@@ -2,6 +2,8 @@
 
 [Open the private demo](https://kikimashta-short-context-250.cornell-tech-5688.chatgpt.site).
 
+The owner's follow-up in #253 adds a [complete 74-prompt level-1 text/card review](https://kikimashta-short-context-250.cornell-tech-5688.chatgpt.site/drafts.html): two per each of the 37 source-level words, counting the ten examples below. It imports the real app stylesheet, palette and header. It reuses 56 existing images through 69 shared card concepts, with thirteen missing pictures explicitly labeled as shared artwork briefs. Correct-answer reveal, word filtering and the shared-card inventory expose reuse across words. The source bank and [authoring rules](../../content/contextual/short-level-1/README.md) are separate from the original player and its approved-generation audio snapshot.
+
 The owner's review rejected the first version's recreated interface and hand-drawn SVG pictures. This replacement imports the real production `ContextualQuiz`, `MasteryFeedback`, `PracticeHeader`, `QuizProgress`, `themes.ts`, and `styles.css`. The shared header/progress were lifted unchanged from `App.tsx` into `PracticeChrome.tsx`; production and the review demo now use the same components. The demo has no separate quiz stylesheet or illustration renderer.
 
 The ten short Japanese drafts are unchanged. Four counting prompts play only their sentence. The production contextual component supports that without requiring an empty question recording. Other prompts retain the same sentence–650 ms pause–question playback. The ready screen offers the approved contextual voices Otani and Morioki; all 32 clips now use the shared ElevenLabs pipeline.
@@ -25,10 +27,12 @@ npm ci
 npm run check
 npm run build
 npm start
-npm run test:browser
+E2E_AUDIO=quiet npm run test:browser
 ```
 
 The local preview is http://127.0.0.1:5310. `check` validates TypeScript and every answer/source hash. Browser cases verify a complete ten-question session with real audio and the actual quiz, sentence-only and paired recordings, raster image decoding, feedback/translations, restart, and the failed-audio/replay boundary in Chromium and mobile WebKit. The physical iPhone and owner pronunciation/artwork acceptance remain separate.
+
+Demo tests use the app's shared quiet-media helper through their own runner fixture, avoiding a second Playwright runner import. Runs mute only media output while retaining native promises, requests, decoding, playback clocks and events. Keep automated tests silent as requested by the owner.
 
 ## Portable Sites source
 
